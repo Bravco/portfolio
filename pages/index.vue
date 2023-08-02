@@ -4,10 +4,10 @@
         <div class="main-grid">
             <div class="selected-work">
                 <span class="heading">Selected work</span>
-                <div class="projects">
-                    <button class="project" aria-label="Select project"></button>
-                    <button class="project" aria-label="Select project"></button>
-                    <button class="project" aria-label="Select project"></button>
+                <div class="project-card-grid">
+                    <button class="project-card" aria-label="Select project"></button>
+                    <button class="project-card" aria-label="Select project"></button>
+                    <button class="project-card" aria-label="Select project"></button>
                 </div>
             </div>
             <div class="contact-sidebar">
@@ -66,18 +66,19 @@
         font-weight: 500;
     }
 
-    .projects {
+    .project-card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
-    .project {
+    .project-card {
         min-height: 16rem;
         background-color: rgba(0, 0, 0, .1);
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.10);
     }
 
-    .project:first-child {
+    .project-card:first-child {
         grid-row: span 2;
     }
 
