@@ -91,5 +91,9 @@
         .main-grid {
             grid-template-columns: auto;
         }
+
+        .contact-sidebar {
+            position: static;
+        }
     }
 </style>
