@@ -5,7 +5,7 @@
             <div class="hero-about">
                 <nuxt-img class="about-arrow" src="/images/arrow.svg" alt="arrow"/>
                 <p class="about-paragraph">I am a creative <span>web developer</span> who turns ideas into visually captivating and functional websites.</p>
-                <a class="hire-btn" href="mailto:a.hamracek@gmail.com" aria-label="Hire me">HIRE ME</a>
+                <a class="hire-btn" href="mailto:a.hamracek@gmail.com" target="_blank">HIRE ME</a>
             </div>
             <div class="hero-visuals">
                 <Particles class="particles"/>
@@ -28,9 +28,12 @@
     }
 
     .hero {
+        --hero-margin-bottom: 6rem;
+
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        padding-bottom: var(--hero-margin-bottom);
     }
 
     .hero-about {
@@ -108,7 +111,7 @@
     .me-img {
         width: 24rem;
         position: absolute;
-        bottom: -6rem;
+        bottom: calc(0px - var(--hero-margin-bottom));
         right: 0;
     }
 
