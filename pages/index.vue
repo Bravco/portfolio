@@ -86,4 +86,10 @@
         align-items: center;
         gap: .5rem;
     }
+
+    @media only screen and (max-width: 768px) {
+        .main-grid {
+            grid-template-columns: auto;
+        }
+    }
 </style>
