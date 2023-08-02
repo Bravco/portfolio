@@ -115,7 +115,7 @@
         right: 0;
     }
 
-    @media only screen and (max-width: 384px) {
+    @media only screen and (max-width: 512px) {
         .hero-visuals {
             display: none;
         }
