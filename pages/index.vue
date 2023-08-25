@@ -98,4 +98,14 @@
         object-position: bottom;
         z-index: -1;
     }
+
+    @media only screen and (max-width: 768px) {
+        .viewport {
+            height: 20rem;
+        }
+
+        .project {
+            width: 16rem;
+        }
+    }
 </style>
