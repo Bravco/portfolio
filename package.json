@@ -14,5 +14,8 @@
     "@types/node": "^20.5.6",
     "nuxt": "^3.6.5",
     "nuxt-icon": "^0.5.0"
+  },
+  "dependencies": {
+    "scrollbooster": "^3.0.2"
   }
 }

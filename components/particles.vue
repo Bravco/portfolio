@@ -28,7 +28,7 @@
                 }
 
                 draw() {
-                    ctx.fillStyle = "#323232";
+                    ctx.fillStyle = getComputedStyle(canvas).getPropertyValue("--color-text");
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.closePath();
@@ -43,7 +43,7 @@
 
                     if (dist < mouse.radius*2) {
                         const arcSize = this.size * 3 * (1 + force);
-                        ctx.fillStyle = "#323232";
+                        ctx.fillStyle = getComputedStyle(canvas).getPropertyValue("--color-text");
                         ctx.beginPath();
                         ctx.arc(this.x, this.y, arcSize, 0, Math.PI * 2);
                         ctx.closePath();

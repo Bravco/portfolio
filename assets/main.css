@@ -15,6 +15,7 @@
 
 body {
     margin: 4rem 20%;
+    overflow-x: hidden;
     color: var(--color-text);
     background-color: var(--color-background-primary);
 }
