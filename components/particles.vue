@@ -1,10 +1,10 @@
 <template>
     <div>
-        <canvas id="canvas" width="384" height="256"></canvas>
+        <canvas id="canvas" width="384" height="256"/>
     </div>
 </template>
 
-<script setup>
+<script lang="js" setup>
     const particleDist = 32;
     const mouse = {
         x: undefined,

@@ -2,15 +2,24 @@
     <div>
         <header>
             <nav>
-                <span class="logo">Andrej Hamráček</span>
-                <div class="nav-actions">
-                    <button>
-                        <Icon name="material-symbols:globe-uk" size="1.5rem"/>
-                    </button>
-                    <button>
-                        <Icon name="material-symbols:sunny-outline-rounded" size="1.5rem"/>
-                    </button>
-                </div>
+                <h1>Andrej Hamráček</h1>
+                <ul class="socials">
+                    <li>
+                        <a href="https://github.com/Bravco" target="_blank">
+                            <Icon name="fa6-brands:github" size="1.25rem"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/bravco_" target="_blank">
+                            <Icon name="fa6-brands:x-twitter" size="1.25rem"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/bravco_/" target="_blank">
+                            <Icon name="fa6-brands:instagram" size="1.25rem"/>
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </header>
 
@@ -28,14 +37,9 @@
         margin-bottom: 6rem;
     }
 
-    .logo {
-        white-space: nowrap;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-    
-    .nav-actions {
+    .socials {
         display: flex;
-        gap: 1.5rem;
+        align-items: center;
+        gap: 1rem;
     }
 </style>

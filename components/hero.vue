@@ -115,6 +115,12 @@
         right: 0;
     }
 
+    @media only screen and (max-width: 384px) {
+        .about-paragraph {
+            width: 100%;
+        }
+    }
+
     @media only screen and (max-width: 512px) {
         .hero-visuals {
             display: none;
