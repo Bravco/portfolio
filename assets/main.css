@@ -11,10 +11,12 @@
     --color-primary: #3935FF;
     --color-background-primary: white;
     --color-text: #544E64;
+
+    --content-margin: 4rem 20%;
 }
 
 body {
-    margin: 4rem 20%;
+    margin: var(--content-margin);
     overflow-x: hidden;
     color: var(--color-text);
     background-color: var(--color-background-primary);
@@ -43,7 +45,7 @@ a:hover, button:hover {
 }
 
 @media only screen and (max-width: 1024px) {
-    body {
-        margin: 4rem 2rem;
+    :root {
+        --content-margin: 4rem 2rem;
     }
 }

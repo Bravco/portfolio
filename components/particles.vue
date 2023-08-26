@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script lang="js" setup>
+<script setup>
     const particleDist = 32;
     const mouse = {
         x: undefined,
