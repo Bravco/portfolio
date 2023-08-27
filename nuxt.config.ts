@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
+      title: "Andrej Hamráček",
     },
   },
   nitro: {
