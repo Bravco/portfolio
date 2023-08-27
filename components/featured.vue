@@ -47,7 +47,7 @@
                             </ul>
                         </div>
                     </div>
-                    <p>{{ lastSelectedProject.paragraph }}</p>
+                    <ContentDoc :path="lastSelectedProject.title.toLowerCase()"/>
                 </div>
             </div>
         </section>
@@ -58,38 +58,12 @@
     // @ts-ignore
     import ScrollBooster from "scrollbooster";
 
-    const projects = [
-        {
-            id: 0,
-            isDark: false,
-            title: "Metagem",
-            url: "https://metagem.pro",
-            logoUrl: "/images/metagem-logo.webp",
-            bgUrl: "/images/metagem-background.webp",
-            paragraphTitle: "An AI powered web app used to generate custom metadata for SEO optimization.",
-            paragraph: "",
-            techIcons: [
-                "logos:nuxt-icon",
-                "logos:openai-icon",
-                "logos:firebase",
-                "logos:stripe",
-            ],
+    const props = defineProps({
+        projects: {
+            type: Array as PropType<Project[]>,
+            required: true,
         },
-        {
-            id: 1,
-            isDark: true,
-            title: "BadBoys",
-            url: "https://badboys.netlify.app",
-            logoUrl: "/images/badboys-logo.webp",
-            bgUrl: "/images/badboys-background.webp",
-            paragraphTitle: "A fully functional website for a local pizzeria called BadBoys.",
-            paragraph: "",
-            techIcons: [
-                "logos:nuxt-icon",
-                "logos:supabase-icon",
-            ],
-        },
-    ];
+    });
 
     const selectedProjectId = ref<number | null>(null);
     const lastSelectedProject = ref<any>(null);
@@ -136,7 +110,7 @@
         }
 
         selectedProjectId.value = id;
-        lastSelectedProject.value = projects.find((project) => project.id === id);
+        lastSelectedProject.value = props.projects.find((project) => project.id === id);
     }
 
     function deselectProject() {
