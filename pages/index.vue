@@ -27,21 +27,24 @@
                 <div v-if="lastSelectedProject" class="project-container-content">
                     <div class="project-container-info">
                         <nuxt-img :src="lastSelectedProject.logoUrl" :alt="`${lastSelectedProject.title}-logo`"/>
-                        <NuxtLink to="">
-                            AI generator used to create suited metadata for SEO optimization.
-                            <Icon name="fa6-solid:up-right-from-square"/>
-                        </NuxtLink>
+                        <h1>
+                            <NuxtLink class="project-container-link" :to="lastSelectedProject.url" target="_blank">
+                                {{ lastSelectedProject.paragraphTitle }}
+                                &nbsp;
+                                <Icon name="fa6-solid:up-right-from-square"/>
+                            </NuxtLink>
+                        </h1>
                         <div class="project-container-technologies">
                             <span>Tech stack</span>
-                            <div class="vl"></div>
-                            <ul>
-                                <li v-for="_ in 3">
-                                    <Icon name="devicon:nuxtjs" size="2rem"/>
+                            <div :class="['vl', { light: lastSelectedProject.isDark }]"></div>
+                            <ul class="project-container-technologies-list">
+                                <li v-for="icon in lastSelectedProject.techIcons">
+                                    <Icon :name="icon" size="2rem"/>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <p class="project-container-description"></p>
+                    <p>{{ lastSelectedProject.paragraph }}</p>
                 </div>
             </div>
         </section>
@@ -57,15 +60,31 @@
             id: 0,
             isDark: false,
             title: "Metagem",
+            url: "https://metagem.pro",
             logoUrl: "/images/metagem-logo.webp",
             bgUrl: "/images/metagem-background.webp",
+            paragraphTitle: "An AI powered web app used to generate custom metadata for SEO optimization.",
+            paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            techIcons: [
+                "logos:nuxt-icon",
+                "logos:openai-icon",
+                "logos:firebase",
+                "logos:stripe",
+            ],
         },
         {
             id: 1,
             isDark: true,
             title: "BadBoys",
+            url: "https://badboys.netlify.app",
             logoUrl: "/images/badboys-logo.webp",
             bgUrl: "/images/badboys-background.webp",
+            paragraphTitle: "A fully functional website for a local pizzeria called BadBoys.",
+            paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            techIcons: [
+                "logos:nuxt-icon",
+                "logos:supabase-icon",
+            ],
         },
     ];
 
@@ -77,6 +96,7 @@
             return {
                 "color": lastSelectedProject.value.isDark ? "white" : "var(--color-text)",
                 "background-image": `url('${lastSelectedProject.value.bgUrl}')`,
+                "text-shadow": `${lastSelectedProject.value.isDark ? "black" : "white" } 2px 2px 4px`,
             };
         } else {
             return {};
@@ -173,6 +193,10 @@
     .project-container {
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
         position: fixed;
         top: calc(var(--top-offset) - 50%);
         left: calc(var(--left-offset) - 50%);
@@ -198,6 +222,41 @@
         color: inherit;
     }
 
+    .project-container-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+
+    .project-container-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .project-container-link {
+        color: inherit;
+    }
+
+    .project-container-link:hover {
+        filter: none;
+        text-decoration: underline;
+    }
+
+    .project-container-technologies {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .project-container-technologies-list {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+    }
+
     @media only screen and (max-width: 768px) {
         .viewport {
             height: 20rem;
@@ -205,6 +264,10 @@
 
         .project {
             width: 16rem;
+        }
+
+        .project-container-content {
+            grid-template-columns: 1fr;
         }
     }
 </style>

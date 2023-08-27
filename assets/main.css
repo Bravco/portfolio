@@ -44,6 +44,16 @@ a:hover, button:hover {
     filter: opacity(50%);
 }
 
+.vl {
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-text);
+}
+
+.vl.light {
+    background-color: white;
+}
+
 @media only screen and (max-width: 1024px) {
     :root {
         --content-margin: 4rem 2rem;
