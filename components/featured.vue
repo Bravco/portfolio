@@ -47,7 +47,7 @@
                             </ul>
                         </div>
                     </div>
-                    <ContentDoc :path="lastSelectedProject.title.toLowerCase()"/>
+                    <ContentDoc :path="lastSelectedProject.title.toLowerCase()" :head="false"/>
                 </div>
             </div>
         </section>

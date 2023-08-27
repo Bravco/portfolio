@@ -9,6 +9,13 @@ export default defineNuxtConfig({
   css: [
     "@/assets/main.css",
   ],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+    },
+  },
   nitro: {
     compressPublicAssets: true,
   },
