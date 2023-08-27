@@ -68,10 +68,11 @@ a:hover, button:hover {
     border-radius: 50%;
     background-color: var(--main-color);
     z-index: -1;
-    transform: scale(0);
+    opacity: 0;
 }
 
 .icon-btn:hover::before {
+    opacity: 1;
     animation: iconBtnScale 200ms forwards;
 }
 
