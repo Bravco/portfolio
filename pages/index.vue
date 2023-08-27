@@ -21,7 +21,11 @@
                 :class="['project-container', { active: selectedProjectId !== null }]"
                 :style="projectContainerStyle"
             >
-                <button @click="deselectProject" class="back-btn">
+                <button 
+                    v-if="lastSelectedProject" 
+                    @click="deselectProject" 
+                    :class="['icon-btn', { light: lastSelectedProject.isDark }]"
+                >
                     <Icon name="fa6-solid:arrow-left" size="1.25rem"/>
                 </button>
                 <div v-if="lastSelectedProject" class="project-container-content">
@@ -215,11 +219,6 @@
         transform: scale(1);
         top: 0;
         left: 0;
-    }
-    .back-btn {
-        display: grid;
-        place-items: center;
-        color: inherit;
     }
 
     .project-container-content {

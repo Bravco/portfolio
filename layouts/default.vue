@@ -5,19 +5,19 @@
                 <h1>Andrej Hamráček</h1>
                 <ul class="socials">
                     <li>
-                        <a href="https://github.com/Bravco" target="_blank">
+                        <NuxtLink class="icon-btn" to="https://github.com/Bravco" target="_blank">
                             <Icon name="fa6-brands:github" size="1.25rem"/>
-                        </a>
+                        </NuxtLink>
                     </li>
                     <li>
-                        <a href="https://twitter.com/bravco_" target="_blank">
+                        <NuxtLink class="icon-btn" to="https://twitter.com/bravco_" target="_blank">
                             <Icon name="fa6-brands:x-twitter" size="1.25rem"/>
-                        </a>
+                        </NuxtLink>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/bravco_/" target="_blank">
+                        <NuxtLink class="icon-btn" to="https://www.instagram.com/bravco_/" target="_blank">
                             <Icon name="fa6-brands:instagram" size="1.25rem"/>
-                        </a>
+                        </NuxtLink>
                     </li>
                 </ul>
             </nav>
@@ -40,6 +40,6 @@
     .socials {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 </style>

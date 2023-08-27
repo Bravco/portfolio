@@ -44,6 +44,42 @@ a:hover, button:hover {
     filter: opacity(50%);
 }
 
+.icon-btn.light {
+    --main-color: white;
+    --accent-color: var(--color-text);
+}
+
+.icon-btn {
+    --main-color: var(--color-text);
+    --accent-color: white;
+
+    position: relative;
+    color: var(--main-color);
+    transition: color 150ms;
+}
+
+.icon-btn::before {
+    content: "";
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transform: scale(0);
+}
+
+.icon-btn:hover::before {
+    animation: iconBtnScale 200ms forwards;
+}
+
+.icon-btn:hover {
+    filter: none;
+    color: var(--accent-color);
+}
+
 .vl {
     width: 2px;
     height: 100%;
@@ -57,5 +93,17 @@ a:hover, button:hover {
 @media only screen and (max-width: 1024px) {
     :root {
         --content-margin: 4rem 2rem;
+    }
+}
+
+@keyframes iconBtnScale {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
