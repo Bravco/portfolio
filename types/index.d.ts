@@ -8,6 +8,7 @@ declare global {
         url: string,
         logoUrl: string,
         bgUrl: string,
+        bgColor: string,
         paragraphTitle: string,
         techIcons: string[],
     }

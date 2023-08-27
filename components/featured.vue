@@ -12,7 +12,7 @@
                         class="project"
                     >
                         <nuxt-img class="project-logo" :src="project.logoUrl" :alt="`${project.title}-logo`"/>
-                        <nuxt-img class="project-bg" :src="project.bgUrl" :alt="`${project.title}-image`"/>
+                        <nuxt-img class="project-bg" :style="{ 'background-color': project.bgColor }" :src="project.bgUrl" :alt="`${project.title}-image`"/>
                     </button>
                 </div>
             </div>
@@ -65,6 +65,7 @@
         },
     });
 
+    const isDragging = ref<boolean>(false);
     const selectedProjectId = ref<number | null>(null);
     const lastSelectedProject = ref<any>(null);
     
@@ -72,8 +73,9 @@
         if (lastSelectedProject.value) {
             return {
                 "color": lastSelectedProject.value.isDark ? "white" : "var(--color-text)",
+                "background-color": lastSelectedProject.value.bgColor,
                 "background-image": `url('${lastSelectedProject.value.bgUrl}')`,
-                "text-shadow": `${lastSelectedProject.value.isDark ? "black" : "white" } 2px 2px 4px`,
+                "text-shadow": `1px 1px 2px ${lastSelectedProject.value.isDark ? "black" : "white"}`,
             };
         } else {
             return {};
@@ -93,11 +95,16 @@
                 onUpdate: (state : any) => {
                     content.style.transform = `translate(${-state.position.x}px)`;
                 },
+                onPointerUp: (state : any) => {
+                    isDragging.value = state.isDragging;
+                },
             });
         }
     });
 
     async function selectProject(event : MouseEvent, id : number) {
+        if (isDragging.value) return;
+
         if (process.client) {
             await new Promise<void>((resolve) => {
                 const element = document.querySelector(".project-container") as HTMLElement;
@@ -133,7 +140,7 @@
     .content {
         height: 100%;
         display: flex;
-        gap: 1rem;
+        gap: 2rem;
         user-select: none;
     }
 
@@ -162,7 +169,7 @@
         top: 0;
         left: 0;
         object-fit: cover;
-        object-position: bottom;
+        object-position: right;
         z-index: -1;
     }
 
@@ -178,7 +185,7 @@
         left: calc(var(--left-offset) - 50%);
         padding: var(--content-margin);
         background-size: cover;
-        background-position: center;
+        background-position: right;
         z-index: 10;
         pointer-events: none;
         transform: scale(0);
@@ -194,8 +201,9 @@
     }
 
     .project-container-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        width: 50%;
+        display: flex;
+        flex-direction: column;
         gap: 4rem;
     }
 
@@ -241,8 +249,12 @@
             width: 16rem;
         }
 
+        .project-container {
+            background-position: center;
+        }
+
         .project-container-content {
-            grid-template-columns: 1fr;
+            width: 100%;
         }
     }
 </style>

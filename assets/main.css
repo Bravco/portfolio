@@ -68,6 +68,7 @@ a:hover, button:hover {
     border-radius: 50%;
     background-color: var(--main-color);
     z-index: -1;
+    pointer-events: none;
     opacity: 0;
 }
 
