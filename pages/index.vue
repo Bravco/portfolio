@@ -68,7 +68,7 @@
             logoUrl: "/images/metagem-logo.webp",
             bgUrl: "/images/metagem-background.webp",
             paragraphTitle: "An AI powered web app used to generate custom metadata for SEO optimization.",
-            paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            paragraph: "",
             techIcons: [
                 "logos:nuxt-icon",
                 "logos:openai-icon",
@@ -84,7 +84,7 @@
             logoUrl: "/images/badboys-logo.webp",
             bgUrl: "/images/badboys-background.webp",
             paragraphTitle: "A fully functional website for a local pizzeria called BadBoys.",
-            paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            paragraph: "",
             techIcons: [
                 "logos:nuxt-icon",
                 "logos:supabase-icon",
@@ -168,7 +168,6 @@
         width: 20rem;
         flex: 0 0 auto;
         position: relative;
-        box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, .1);
         transition: all 300ms;
     }
 
@@ -259,6 +258,10 @@
     @media only screen and (max-width: 768px) {
         .viewport {
             height: 20rem;
+        }
+
+        .content {
+            overflow-x: scroll;
         }
 
         .project {
