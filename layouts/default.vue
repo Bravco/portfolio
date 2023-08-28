@@ -26,6 +26,10 @@
         <main>
             <slot/>
         </main>
+
+        <footer>
+            <p>&copy; 2023 Andrej Hamráček | All Rights Reserved.</p>
+        </footer>
     </div>
 </template>
 
@@ -41,5 +45,11 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
+    }
+
+    footer {
+        margin-top: 6rem;
+        text-align: center;
+        font-size: .75rem;
     }
 </style>

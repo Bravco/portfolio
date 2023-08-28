@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main-wrapper">
         <Hero/>
         <Featured :projects="featuredProjects"/>
     </div>
@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
     const featuredProjects : Project[] = [
-    {
+        {
             id: 0,
             isDark: false,
             title: "Metagem",
@@ -71,3 +71,11 @@
         },
     ];
 </script>
+
+<style scoped>
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+    }
+</style>
