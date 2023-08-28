@@ -12,5 +12,9 @@ declare global {
         paragraphTitle: string,
         techIcons: string[],
         githubRepoUrl: string,
+        status: {
+            message: string,
+            negative: boolean,
+        },
     }
 }

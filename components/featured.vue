@@ -29,6 +29,9 @@
                 </button>
                 <div v-if="lastSelectedProject" class="project-container-content">
                     <div class="project-container-info">
+                        <span 
+                            :class="['project-container-status', { negative: lastSelectedProject.status.negative }]"
+                        >{{ lastSelectedProject.status.message }}</span>
                         <nuxt-img 
                             class="project-container-logo" 
                             :src="lastSelectedProject.logoUrl" 
@@ -243,6 +246,18 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+    }
+
+    .project-container-status {
+        padding: .25rem .5rem;
+        font-size: .75rem;
+        color: white;
+        background-color: #1FED58;
+        border-radius: .25rem;
+    }
+
+    .project-container-status.negative {
+        background-color: #FF5353;
     }
 
     .project-container-logo {

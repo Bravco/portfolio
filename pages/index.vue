@@ -23,6 +23,10 @@
                 "logos:stripe",
             ],
             githubRepoUrl: "https://github.com/Bravco/metagem",
+            status: {
+                message: "Deployed",
+                negative: false,
+            },
         },
         {
             id: 1,
@@ -39,6 +43,10 @@
                 "logos:netlify-icon",
             ],
             githubRepoUrl: "https://github.com/Bravco/badboys",
+            status: {
+                message: "Finished",
+                negative: false,
+            },
         },
         {
             id: 2,
@@ -56,6 +64,10 @@
                 "logos:firebase",
             ],
             githubRepoUrl: "https://github.com/Bravco/cowlendar",
+            status: {
+                message: "Unfinished",
+                negative: true,
+            },
         },
     ];
 </script>
