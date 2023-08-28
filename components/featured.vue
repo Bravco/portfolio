@@ -251,7 +251,9 @@
     .project-container-status {
         padding: .25rem .5rem;
         font-size: .75rem;
+        font-weight: 500;
         color: white;
+        text-shadow: none;
         background-color: #1FED58;
         border-radius: .25rem;
     }
