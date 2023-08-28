@@ -22,6 +22,7 @@
                 "logos:firebase",
                 "logos:stripe",
             ],
+            githubRepoUrl: "https://github.com/Bravco/metagem",
         },
         {
             id: 1,
@@ -35,7 +36,9 @@
             techIcons: [
                 "logos:nuxt-icon",
                 "logos:supabase-icon",
+                "logos:netlify-icon",
             ],
+            githubRepoUrl: "https://github.com/Bravco/badboys",
         },
     ];
 </script>

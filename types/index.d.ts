@@ -11,5 +11,6 @@ declare global {
         bgColor: string,
         paragraphTitle: string,
         techIcons: string[],
+        githubRepoUrl: string,
     }
 }

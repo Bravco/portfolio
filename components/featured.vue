@@ -47,7 +47,26 @@
                             </ul>
                         </div>
                     </div>
-                    <ContentDoc :path="lastSelectedProject.title.toLowerCase()" :head="false"/>
+                    <div class="paragraph-wrapper">
+                        <div class="paragraph-toggle">
+                            <button 
+                                @click="paragraphMode = ParagraphMode.STORY"
+                                :class="['paragraph-toggle-btn', { active: paragraphMode === ParagraphMode.STORY }]"
+                            >Story</button>
+                            <button 
+                                @click="paragraphMode = ParagraphMode.TECH"
+                                :class="['paragraph-toggle-btn', { active: paragraphMode === ParagraphMode.TECH }]"
+                            >Tech</button>
+                        </div>
+                        <ContentDoc 
+                            :path="`${lastSelectedProject.title.toLowerCase()}-${paragraphMode}`" 
+                            :head="false"
+                        />
+                        <NuxtLink class="paragraph-github-link" :to="lastSelectedProject.githubRepoUrl" target="_blank">
+                            GitHub repository
+                            <Icon name="fa6-solid:arrow-right"/>
+                        </NuxtLink>
+                    </div>
                 </div>
             </div>
         </section>
@@ -55,6 +74,11 @@
 </template>
 
 <script lang="ts" setup>
+    enum ParagraphMode {
+        STORY = "story",
+        TECH = "tech",
+    }
+
     // @ts-ignore
     import ScrollBooster from "scrollbooster";
 
@@ -68,6 +92,7 @@
     const isDragging = ref<boolean>(false);
     const selectedProjectId = ref<number | null>(null);
     const lastSelectedProject = ref<any>(null);
+    const paragraphMode = ref<ParagraphMode>(ParagraphMode.STORY);
     
     const projectContainerStyle = computed(() => {
         if (lastSelectedProject.value) {
@@ -170,6 +195,7 @@
         left: 0;
         object-fit: cover;
         object-position: right;
+        border-radius: .25rem;
         z-index: -1;
     }
 
@@ -194,6 +220,7 @@
     }
 
     .project-container.active {
+        overflow-y: auto;
         pointer-events: all;
         transform: scale(1);
         top: 0;
@@ -234,6 +261,43 @@
         display: flex;
         align-items: center;
         gap: .75rem;
+    }
+
+    .paragraph-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .paragraph-toggle {
+        border-radius: .25rem;
+    }
+
+    .paragraph-toggle-btn {
+        padding: .25rem 1rem;
+        border-radius: .25rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: inherit;
+    }
+
+    .paragraph-toggle-btn.active {
+        color: white;
+        background-color: var(--color-primary);
+    }
+
+    .paragraph-toggle-btn.active:hover {
+        filter: none;
+    }
+
+    .paragraph-github-link {
+        color: inherit;
+        filter: opacity(.5);
+    }
+
+    .paragraph-github-link:hover {
+        text-decoration: underline;
     }
 
     @media only screen and (max-width: 768px) {
