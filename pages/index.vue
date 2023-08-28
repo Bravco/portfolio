@@ -40,5 +40,22 @@
             ],
             githubRepoUrl: "https://github.com/Bravco/badboys",
         },
+        {
+            id: 2,
+            isDark: false,
+            title: "Cowlendar",
+            url: "https://bravco.github.io/cowlendar/",
+            logoUrl: "/images/cowlendar-logo.webp",
+            bgUrl: "/images/cowlendar-background.webp",
+            bgColor: "#EDEFFF",
+            paragraphTitle: "An application that helps farmers manage the gravidity of cows on the farm.",
+            techIcons: [
+                "logos:flutter",
+                "logos:vue",
+                "logos:nodejs-icon",
+                "logos:firebase",
+            ],
+            githubRepoUrl: "https://github.com/Bravco/cowlendar",
+        },
     ];
 </script>

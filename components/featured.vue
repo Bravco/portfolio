@@ -29,7 +29,11 @@
                 </button>
                 <div v-if="lastSelectedProject" class="project-container-content">
                     <div class="project-container-info">
-                        <nuxt-img :src="lastSelectedProject.logoUrl" :alt="`${lastSelectedProject.title}-logo`"/>
+                        <nuxt-img 
+                            class="project-container-logo" 
+                            :src="lastSelectedProject.logoUrl" 
+                            :alt="`${lastSelectedProject.title}-logo`"
+                        />
                         <h1>
                             <NuxtLink class="project-container-link" :to="lastSelectedProject.url" target="_blank">
                                 {{ lastSelectedProject.paragraphTitle }}
@@ -115,7 +119,6 @@
             new ScrollBooster({
                 viewport,
                 content,
-                scrollMode: "transform",
                 direction: "horizontal",
                 onUpdate: (state : any) => {
                     content.style.transform = `translate(${-state.position.x}px)`;
@@ -182,6 +185,7 @@
     }
 
     .project-logo {
+        max-width: 40%;
         position: absolute;
         top: 1rem;
         left: 1rem;
@@ -239,6 +243,10 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+    }
+
+    .project-container-logo {
+        max-height: 3rem;
     }
 
     .project-container-link {
