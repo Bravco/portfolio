@@ -1,12 +1,12 @@
 <template>
     <div class="main-wrapper">
         <Hero/>
-        <Featured :projects="featuredProjects"/>
+        <LatestWork :projects="latestProjects"/>
     </div>
 </template>
 
 <script lang="ts" setup>
-    const featuredProjects : Project[] = [
+    const latestProjects : Project[] = [
         {
             id: 0,
             isDark: false,
@@ -24,7 +24,7 @@
             ],
             githubRepoUrl: "https://github.com/Bravco/metagem",
             status: {
-                message: "Deployed",
+                message: "Published",
                 negative: false,
             },
         },
@@ -44,7 +44,7 @@
             ],
             githubRepoUrl: "https://github.com/Bravco/badboys",
             status: {
-                message: "Finished",
+                message: "Completed",
                 negative: false,
             },
         },
@@ -65,7 +65,7 @@
             ],
             githubRepoUrl: "https://github.com/Bravco/cowlendar",
             status: {
-                message: "Unfinished",
+                message: "Not completed",
                 negative: true,
             },
         },

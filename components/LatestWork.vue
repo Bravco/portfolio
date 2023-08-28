@@ -1,7 +1,7 @@
 <template>
     <div>
-        <section class="featured-work">
-            <h2>Featured Work</h2>
+        <section class="latest-work">
+            <h2>Latest work</h2>
             <div class="viewport">
                 <div class="content">
                     <button 
@@ -157,7 +157,7 @@
 </script>
 
 <style scoped>
-    .featured-work {
+    .latest-work {
         display: flex;
         flex-direction: column;
         gap: 2rem;
