@@ -11,6 +11,8 @@
     --color-primary: #3935FF;
     --color-background-primary: white;
     --color-text: #544E64;
+    --color-success: #1FED58;
+    --color-error: #FF5353;
 
     --content-margin: 4rem 20%;
 }

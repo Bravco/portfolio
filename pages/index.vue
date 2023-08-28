@@ -1,7 +1,7 @@
 <template>
     <div class="main-wrapper">
         <Hero/>
-        <LatestWork :projects="latestProjects"/>
+        <Latest :projects="latestProjects"/>
     </div>
 </template>
 

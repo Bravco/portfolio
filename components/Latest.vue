@@ -1,7 +1,7 @@
 <template>
     <div>
-        <section class="latest-work">
-            <h2>Latest work</h2>
+        <section class="latest">
+            <h2>Latest projects</h2>
             <div class="viewport">
                 <div class="content">
                     <button 
@@ -157,7 +157,7 @@
 </script>
 
 <style scoped>
-    .latest-work {
+    .latest {
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -254,12 +254,12 @@
         font-weight: 500;
         color: white;
         text-shadow: none;
-        background-color: #1FED58;
+        background-color: var(--color-success);
         border-radius: .25rem;
     }
 
     .project-container-status.negative {
-        background-color: #FF5353;
+        background-color: var(--color-error);
     }
 
     .project-container-logo {
