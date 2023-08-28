@@ -293,10 +293,11 @@
 
     .paragraph-github-link {
         color: inherit;
-        filter: opacity(.5);
+        font-weight: 500;
     }
 
     .paragraph-github-link:hover {
+        filter: none;
         text-decoration: underline;
     }
 
