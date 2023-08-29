@@ -5,10 +5,3 @@
         </NuxtLink>
     </div>
 </template>
-
-<style scoped>
-    h1 {
-        text-align: start;
-        font-size: 1.5rem;
-    }
-</style>

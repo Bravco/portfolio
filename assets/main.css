@@ -9,7 +9,7 @@
 
 :root {
     --color-primary: #3935FF;
-    --color-secondary: #ec338a;
+    --color-secondary: #ff3895;
     --color-background-primary: white;
     --color-text: #544E64;
     --color-success: #1FED58;
@@ -22,11 +22,6 @@ body {
     margin: var(--content-margin);
     color: var(--color-text);
     background-color: var(--color-background-primary);
-}
-
-h1 {
-    text-align: center;
-    font-size: 2.5rem;
 }
 
 h2 {

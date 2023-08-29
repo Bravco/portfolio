@@ -127,6 +127,11 @@
         gap: 4rem;
     }
 
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
     .questions {
         display: flex;
         flex-direction: column;
