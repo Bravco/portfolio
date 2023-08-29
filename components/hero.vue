@@ -5,7 +5,7 @@
             <div class="hero-about">
                 <nuxt-img class="about-arrow" src="/images/arrow.svg" alt="arrow"/>
                 <p class="about-paragraph">I am a creative <span>web developer</span> who turns ideas into visually captivating and functional websites.</p>
-                <NuxtLink class="hire-btn" href="mailto:a.hamracek@gmail.com" target="_blank">HIRE ME</NuxtLink>
+                <NuxtLink to="/calculator" class="cta-btn">Get website</NuxtLink>
             </div>
             <div class="hero-visuals">
                 <Particles class="particles"/>
@@ -48,7 +48,7 @@
     .about-arrow {
         height: 5rem;
         position: absolute;
-        top: -6rem;
+        top: -5.5rem;
         right: 2rem;
     }
 
@@ -61,45 +61,48 @@
         color: var(--color-primary);
     }
 
-    .hire-btn, .hire-btn::before, .hire-btn::after {
+    .cta-btn, .cta-btn::before, .cta-btn::after {
         width: 12rem;
         height: 2.5rem;
     }
 
-    .hire-btn {
+    .cta-btn {
         display: grid;
         place-items: center;
         position: relative;
-        font-size: 1.125rem;
+        text-transform: uppercase;
+        font-size: 1rem;
         font-weight: 500;
         color: white;
     }
 
-    .hire-btn::before, .hire-btn::after {
+    .cta-btn::before, .cta-btn::after {
         content: "";
         position: absolute;
         transition: all 300ms;
     }
 
-    .hire-btn::before {
+    .cta-btn::before {
         top: calc(-2px - .25rem);
         left: calc(-2px - .25rem);
         border: 2px solid white;
+        border-radius: .25rem;
     }
 
-    .hire-btn::after {
+    .cta-btn::after {
         top: .25rem;
         left: .25rem;
         background-color: var(--color-primary);
+        border-radius: .25rem;
         z-index: -1;
     }
 
-    .hire-btn:hover::before {
+    .cta-btn:hover::before {
         top: -2px;
         left: -2px;
     }
 
-    .hire-btn:hover::after {
+    .cta-btn:hover::after {
         top: 0;
         left: 0;
     }

@@ -2,7 +2,7 @@
     <div>
         <header>
             <nav>
-                <h1>Andrej Hamráček</h1>
+                <Logo/>
                 <ul class="socials">
                     <li>
                         <NuxtLink class="icon-btn" to="https://github.com/Bravco" target="_blank">
@@ -38,7 +38,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
     }
 
     .socials {
