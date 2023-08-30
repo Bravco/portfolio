@@ -52,7 +52,7 @@
                     </NuxtLink>
                 </div>
                 <div class="price-wrapper">
-                    <span class="total-price">~ {{ (calculateTotalPrice()/100).toFixed(2) }} €</span>
+                    <span class="total-price">± {{ (calculateTotalPrice()/100).toFixed(2) }} €</span>
                     <p class="price-reminder">
                         <Icon name="fa6-solid:circle-exclamation"/>
                         The final price may vary depending on your requirements.

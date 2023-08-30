@@ -38,7 +38,44 @@
         </main>
 
         <footer>
-            <p>&copy; 2023 Andrej Hamráček | All Rights Reserved.</p>
+            <nuxt-img class="background-wave" src="/images/wave.svg" alt="wave"/>
+            <div class="footer-list">
+                <Logo/>
+                <p>&copy; 2023 Andrej Hamráček | All Rights Reserved.</p>
+            </div>
+            <div class="footer-links">
+                <ul class="footer-list">
+                    <li>
+                        <h3>Navigation</h3>
+                    </li>
+                    <li>
+                        <NuxtLink to="/">Home</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/get-website">Get website</NuxtLink>
+                    </li>
+                </ul>
+                <ul class="footer-list">
+                    <li>
+                        <h3>Contact</h3>
+                    </li>
+                    <li>
+                        <NuxtLink to="mailto:a.hamracek@gmail.com">a.hamracek@gmail.com</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="tel:+421949725726">+421 949 725 726</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="https://github.com/Bravco">GitHub</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="https://twitter.com/bravco_">Twitter</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="https://www.instagram.com/bravco_/">Instagram</NuxtLink>
+                    </li>
+                </ul>
+            </div>
         </footer>
     </div>
 </template>
@@ -58,9 +95,39 @@
     }
 
     footer {
-        margin-top: 6rem;
+        --footer-margin-top: 6rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        margin-top: calc(var(--footer-margin-top) * 2);
         text-align: center;
         font-size: .75rem;
+    }
+
+    footer .background-wave {
+        width: 100dvw;
+        height: calc(100% + var(--content-margin-vertical) + var(--footer-margin-top));
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: rotate(180deg) translate(var(--content-margin-horizontal), calc(var(--content-margin-vertical) * -1));
+        object-fit: cover;
+        object-position: bottom;
+        z-index: -10;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 4rem;
+    }
+
+    .footer-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .25rem;
     }
 
     @media only screen and (max-width: 512px) {
@@ -68,6 +135,18 @@
             flex-direction: column;
             align-items: flex-start;
             gap: .5rem;
+        }
+
+        .footer-links {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        footer {
+            flex-wrap: wrap;
+            gap: 4rem;
         }
     }
 </style>

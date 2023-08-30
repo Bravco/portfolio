@@ -15,7 +15,9 @@
     --color-success: #1FED58;
     --color-error: #FF5353;
 
-    --content-margin: 4rem 20%;
+    --content-margin-vertical: 4rem;
+    --content-margin-horizontal: 20%;
+    --content-margin: var(--content-margin-vertical) var(--content-margin-horizontal);
 }
 
 body {
@@ -104,7 +106,8 @@ a:hover, button:hover {
 
 @media only screen and (max-width: 1024px) {
     :root {
-        --content-margin: 4rem 2rem;
+        --content-margin-vertical: 2rem;
+        --content-margin-horizontal: 2rem;
     }
 }
 
