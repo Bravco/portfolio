@@ -62,4 +62,12 @@
         text-align: center;
         font-size: .75rem;
     }
+
+    @media only screen and (max-width: 512px) {
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: .5rem;
+        }
+    }
 </style>
