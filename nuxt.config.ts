@@ -35,4 +35,10 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
   },
+  image: {
+    provider: "netlify",
+    netlify: {
+      baseURL: process.env.IMAGES_URL,
+    },
+  },
 })
