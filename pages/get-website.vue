@@ -26,7 +26,6 @@
                             hide-details
                             show-ticks="always"
                             class="slider"
-                            color="var(--color-primary)"
                         >
                             <template v-slot:prepend>
                                 <div>
