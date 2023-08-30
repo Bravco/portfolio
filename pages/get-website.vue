@@ -56,6 +56,7 @@
                     <p class="price-reminder">
                         <Icon name="fa6-solid:circle-exclamation"/>
                         The final price may vary depending on your requirements.
+                        You must contact me for more information.
                     </p>
                 </div>
             </div>
@@ -155,6 +156,7 @@ Additional pages: ${questions.value[2].pageCount}%0A
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 2rem;
     }
 
     .question {
@@ -175,6 +177,7 @@ Additional pages: ${questions.value[2].pageCount}%0A
 
     .options {
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
     }
 
@@ -233,6 +236,7 @@ Additional pages: ${questions.value[2].pageCount}%0A
         display: flex;
         align-items: center;
         gap: 1rem;
+        white-space: nowrap;
     }
 
     .mail-btn, .call-btn {
@@ -253,5 +257,31 @@ Additional pages: ${questions.value[2].pageCount}%0A
     .call-btn {
         padding: calc(.5rem - 2px) 3rem;
         border: 2px solid var(--color-text);
+    }
+
+    @media only screen and (max-width: 768px) {
+        .question-wrapper, .question-wrapper:last-child {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .question-wrapper:last-child {
+            flex-direction: column-reverse;
+        }
+
+        .price-wrapper {
+            align-items: flex-start;
+        }
+
+        .price-reminder {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .btns-wrapper {
+            flex-wrap: wrap;
+        }
     }
 </style>
