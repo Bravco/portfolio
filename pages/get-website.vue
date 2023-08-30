@@ -111,8 +111,8 @@
         return `
 Hello,%0A
 I would like to purchase a website from you.%0A
-Development type: ${questions.value[0].selectedOption ?? "undefined"}%0A
-Website type: ${questions.value[1].selectedOption ?? "undefined"}%0A
+Development type: ${questions.value[0].selectedOption ? questions.value[0].selectedOption.title : "undefined"}%0A
+Website type: ${questions.value[1].selectedOption ? questions.value[1].selectedOption.title : "undefined"}%0A
 Additional pages: ${questions.value[2].pageCount}%0A
 %0A
 `;
