@@ -51,7 +51,7 @@ button {
 }
 
 a:hover, button:hover {
-    filter: opacity(50%);
+    filter: opacity(.5);
 }
 
 .icon-btn.light {
