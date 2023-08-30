@@ -5,6 +5,16 @@
                 <Logo/>
                 <ul class="socials">
                     <li>
+                        <NuxtLink class="icon-btn" to="mailto:a.hamracek@gmail.com" target="_blank">
+                            <Icon name="fa6-solid:envelope" size="1.25rem"/>
+                        </NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink class="icon-btn" to="tel:+421949725726" target="_blank">
+                            <Icon name="fa6-solid:phone" size="1.25rem"/>
+                        </NuxtLink>
+                    </li>
+                    <li>
                         <NuxtLink class="icon-btn" to="https://github.com/Bravco" target="_blank">
                             <Icon name="fa6-brands:github" size="1.25rem"/>
                         </NuxtLink>
@@ -38,7 +48,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
     }
 
     .socials {

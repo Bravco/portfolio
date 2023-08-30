@@ -48,7 +48,7 @@
     .about-arrow {
         height: 5rem;
         position: absolute;
-        top: -5.5rem;
+        top: -6rem;
         right: 2rem;
     }
 

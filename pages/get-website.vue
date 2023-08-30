@@ -143,7 +143,6 @@ Additional pages: ${questions.value[2].pageCount}%0A
         display: flex;
         flex-direction: column;
         gap: 4rem;
-        padding-top: 4rem;
     }
 
     .question-wrapper {
