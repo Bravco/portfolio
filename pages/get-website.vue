@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="price-wrapper">
-                    <span class="question-price">{{ (calculateQuestionPrice(question)/100).toFixed(2) }} €</span>
+                    <span class="question-price">{{ formatPrice(calculateQuestionPrice(question)) }} €</span>
                 </div>
             </div>
             <hr>
@@ -52,7 +52,7 @@
                     </NuxtLink>
                 </div>
                 <div class="price-wrapper">
-                    <span class="total-price">± {{ (calculateTotalPrice()/100).toFixed(2) }} €</span>
+                    <span class="total-price">± {{ formatPrice(calculateTotalPrice()) }} €</span>
                     <p class="price-reminder">
                         <Icon name="fa6-solid:circle-exclamation"/>
                         The final price may vary depending on your requirements.
@@ -65,19 +65,20 @@
 </template>
 
 <script lang="ts" setup>
+    const additionalPagePrice = 3999;
     const questions = ref<any>([
         {
             title: "What kind of development do you prefer?",
-            paragraph: "<b>No-code</b> represents <b>Webflow</b> development and <b>Code</b> means the website will be built from scratch.",
+            paragraph: "<b>No-code</b> represents <b>Webflow</b> development which is the generic pick. <b>Code</b> means that the website will be built from scratch which is best pick for custom websites.",
             selectedOption: null,
             options: [
                 {
                     title: "No-code",
-                    price: 5000,
+                    price: 4999,
                 },
                 {
                     title: "Code",
-                    price: 10000,
+                    price: 6499,
                 },
             ],
         },
@@ -88,21 +89,21 @@
             options: [
                 {
                     title: "Standard",
-                    price: 5000,
+                    price: 4999,
                 },
                 {
                     title: "Advanced",
-                    price: 10000,
+                    price: 9999,
                 },
                 {
                     title: "E-commerce",
-                    price: 20000,
+                    price: 19999,
                 },
             ],
         },
         {
             title: "How many additional pages do you need?",
-            paragraph: "Based on the website type you've chosen, you'll have a default number of pages, but you can add more if you want. <b>+€50/per Additional Page</b>",
+            paragraph: `Based on the website type you've chosen, you'll have a default number of pages, but you can add more if you want. <b>+€${formatPrice(additionalPagePrice)}/per Additional Page</b>`,
             pageCount: 0,
         },
     ]);
@@ -122,7 +123,7 @@ Additional pages: ${questions.value[2].pageCount}%0A
         if (question.selectedOption && question.selectedOption.price) {
             return question.selectedOption.price;
         } else if (question.pageCount) {
-            return question.pageCount*5000;
+            return question.pageCount*additionalPagePrice;
         } else {
             return 0;
         }
@@ -136,6 +137,10 @@ Additional pages: ${questions.value[2].pageCount}%0A
         });
 
         return total;
+    }
+
+    function formatPrice(price : number) {
+        return (price / 100).toFixed(2);
     }
 </script>
 
