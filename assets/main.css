@@ -97,8 +97,9 @@ a:hover, button:hover {
     width: 2.5rem;
     height: 2.5rem;
     position: absolute;
-    top: -50%;
-    left: -50%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     border-radius: 50%;
     background-color: var(--main-color);
     z-index: -1;
