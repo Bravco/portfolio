@@ -43,10 +43,10 @@
             <hr>
             <div class="question-wrapper">
                 <div class="btns-wrapper">
-                    <NuxtLink class="mail-btn" :to="`mailto:a.hamracek@gmail.com?subject=Website%20purchase&body=${mailBody}`">
+                    <NuxtLink class="primary-btn" :to="`mailto:a.hamracek@gmail.com?subject=Website%20purchase&body=${mailBody}`">
                         Send mail
                     </NuxtLink>
-                    <NuxtLink class="call-btn" to="tel:+421949725726">
+                    <NuxtLink class="outline-btn" to="tel:+421949725726">
                         Call me
                     </NuxtLink>
                 </div>
@@ -241,26 +241,6 @@ Additional pages: ${questions.value[2].pageCount}%0A
         align-items: center;
         gap: 1rem;
         white-space: nowrap;
-    }
-
-    .mail-btn, .call-btn {
-        display: grid;
-        place-items: center;
-        text-transform: uppercase;
-        font-size: 1rem;
-        font-weight: 500;
-        border-radius: .25rem;
-    }
-
-    .mail-btn {
-        padding: .5rem 3rem;
-        color: white;
-        background-color: var(--color-primary);
-    }
-
-    .call-btn {
-        padding: calc(.5rem - 2px) 3rem;
-        border: 2px solid var(--color-text);
     }
 
     @media only screen and (max-width: 768px) {

@@ -56,6 +56,28 @@ a:hover, button:hover {
     filter: opacity(.5);
 }
 
+.primary-btn, .outline-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: .25rem;
+}
+
+.primary-btn {
+    padding: .5rem 2rem;
+    color: white;
+    background-color: var(--color-primary);
+}
+
+.outline-btn {
+    padding: calc(.5rem - 2px) 2rem;
+    border: 2px solid var(--color-text);
+}
+
 .icon-btn.light {
     --main-color: white;
     --accent-color: var(--color-text);
