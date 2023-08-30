@@ -41,7 +41,7 @@
             <nuxt-img class="background-wave" src="/images/wave.svg" alt="wave"/>
             <div class="footer-list">
                 <Logo/>
-                <p>&copy; 2023 Andrej Hamráček | All Rights Reserved.</p>
+                <p class="copyright">&copy; 2023 Andrej Hamráček | All Rights Reserved.</p>
             </div>
             <div class="footer-links">
                 <ul class="footer-list">
@@ -103,7 +103,7 @@
         position: relative;
         margin-top: calc(var(--footer-margin-top) * 2);
         text-align: center;
-        font-size: .75rem;
+        font-size: .875rem; 
     }
 
     footer .background-wave {
@@ -128,6 +128,10 @@
         flex-direction: column;
         align-items: flex-start;
         gap: .25rem;
+    }
+
+    .copyright {
+        font-size: .75rem;
     }
 
     @media only screen and (max-width: 512px) {
