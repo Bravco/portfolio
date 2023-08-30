@@ -16,6 +16,20 @@ export default defineNuxtConfig({
         lang: "en",
       },
       title: "Andrej Hamráček",
+      meta: [
+        {
+          name: "author",
+          content: "Andrej Hamráček",
+        },
+        {
+          name: "title",
+          content: "Andrej Hamráček - Web Developer",
+        },
+        {
+          name: "description",
+          content: "I am a creative web developer who turns ideas into visually captivating and functional websites.",
+        },
+      ],
     },
   },
   nitro: {
