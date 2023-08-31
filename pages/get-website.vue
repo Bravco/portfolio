@@ -11,7 +11,7 @@
                         <button 
                             v-for="option in question.options" 
                             :key="option.title" 
-                            @click="question.selectedOption = option"
+                            @click="selectOption(question, option)"
                             :class="['option', { active: option === question.selectedOption }]"
                         >
                             {{ option.title }}
@@ -65,6 +65,7 @@
 
 <script lang="ts" setup>
     const additionalPagePrice = 3999;
+    const multiplier = ref<number>(1);
     const questions = ref<any>([
         {
             title: "What kind of development do you prefer?",
@@ -74,16 +75,18 @@
                 {
                     title: "No-code",
                     price: 4999,
+                    multiplier: 1,
                 },
                 {
                     title: "Code",
-                    price: 6499,
+                    price: 4999,
+                    multiplier: 1.5,
                 },
             ],
         },
         {
             title: "What is your website?",
-            paragraph: "A <b>Standard</b> website is basically a web design project with content. An <b>Advanced</b> website can use a database, authentication, and other advanced features. An <b>E-commerce</b> website has all the requirements for a store.",
+            paragraph: "A <b>Standard</b> website is basically a web design project with content. An <b>Advanced</b> website can use a database, authentication, and other CMS features. An <b>E-commerce</b> website has all the requirements for a store.",
             selectedOption: null,
             options: [
                 {
@@ -118,11 +121,19 @@ Additional pages: ${questions.value[2].pageCount}%0A
 `;
     });
 
+    function selectOption(question : any, option : any) {
+        question.selectedOption = option;
+        
+        if (option.multiplier) {
+            multiplier.value = option.multiplier;
+        }
+    }
+
     function calculateQuestionPrice(question : any) {
         if (question.selectedOption && question.selectedOption.price) {
-            return question.selectedOption.price;
+            return question.selectedOption.price * multiplier.value;
         } else if (question.pageCount) {
-            return question.pageCount*additionalPagePrice;
+            return question.pageCount*additionalPagePrice * multiplier.value;
         } else {
             return 0;
         }
