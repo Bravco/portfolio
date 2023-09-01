@@ -10,6 +10,25 @@
         {
             id: 0,
             isDark: false,
+            title: "Portfolio",
+            url: "/",
+            logoUrl: "/images/portfolio-logo.webp",
+            bgUrl: "/images/portfolio-background.webp",
+            bgColor: "#dbf0ff",
+            paragraphTitle: "A personal portfolio website to illustrate my web development work.",
+            techIcons: [
+                "logos:nuxt-icon",
+                "logos:netlify-icon",
+            ],
+            githubRepoUrl: "https://github.com/Bravco/portfolio",
+            status: {
+                message: "Published",
+                negative: false,
+            },
+        },
+        {
+            id: 1,
+            isDark: false,
             title: "Metagem",
             url: "https://metagem.pro",
             logoUrl: "/images/metagem-logo.webp",
@@ -29,7 +48,7 @@
             },
         },
         {
-            id: 1,
+            id: 2,
             isDark: true,
             title: "BadBoys",
             url: "https://badboys.netlify.app",
@@ -49,7 +68,7 @@
             },
         },
         {
-            id: 2,
+            id: 3,
             isDark: false,
             title: "Cowlendar",
             url: "https://bravco.github.io/cowlendar/",
