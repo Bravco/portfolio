@@ -20,6 +20,18 @@
                 :class="['project-container', { active: selectedProjectId !== null }]"
                 :style="projectContainerStyle"
             >
+                <nuxt-img 
+                    v-if="lastSelectedProject"
+                    class="project-bg" 
+                    :src="lastSelectedProject.bgUrl" 
+                    :alt="`${lastSelectedProject.title}-image`"
+                />
+                <nuxt-img 
+                    v-if="lastSelectedProject"
+                    class="project-bg project-bg-effect" 
+                    :src="lastSelectedProject.bgUrl" 
+                    :alt="`${lastSelectedProject.title}-image`"
+                />
                 <button 
                     v-if="lastSelectedProject" 
                     @click="deselectProject" 
@@ -106,7 +118,7 @@
             return {
                 "color": lastSelectedProject.value.isDark ? "white" : "var(--color-text)",
                 "background-color": lastSelectedProject.value.bgColor,
-                "background-image": `url('${lastSelectedProject.value.bgUrl}')`,
+                //"background-image": `url('${lastSelectedProject.value.bgUrl}')`,
                 "text-shadow": `1px 1px 2px ${lastSelectedProject.value.isDark ? "black" : "white"}`,
             };
         } else {
@@ -204,6 +216,12 @@
         object-position: right;
         border-radius: .25rem;
         z-index: -1;
+    }
+
+    .project-bg-effect {
+        transform: translate(-1rem, -1rem);
+        filter: opacity(.5) blur(1rem);
+        z-index: -2;
     }
 
     .project-container {
