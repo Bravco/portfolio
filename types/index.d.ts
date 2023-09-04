@@ -11,7 +11,7 @@ declare global {
         bgColor: string,
         paragraphTitle: string,
         techIcons: string[],
-        githubRepoUrl: string,
+        githubRepoUrl?: string,
         status: {
             message: string,
             negative: boolean,

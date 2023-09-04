@@ -81,7 +81,12 @@
                             :path="`${lastSelectedProject.title.toLowerCase()}-${paragraphMode}`" 
                             :head="false"
                         />
-                        <NuxtLink class="paragraph-github-link" :to="lastSelectedProject.githubRepoUrl" target="_blank">
+                        <NuxtLink 
+                            v-if="lastSelectedProject.githubRepoUrl" 
+                            class="paragraph-github-link" 
+                            :to="lastSelectedProject.githubRepoUrl" 
+                            target="_blank"
+                        >
                             GitHub repository
                             <Icon name="fa6-solid:arrow-right"/>
                         </NuxtLink>
