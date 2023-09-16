@@ -19,16 +19,6 @@
                             <Icon name="fa6-brands:github" size="1.25rem"/>
                         </NuxtLink>
                     </li>
-                    <li>
-                        <NuxtLink class="icon-btn" to="https://twitter.com/bravco_" target="_blank">
-                            <Icon name="fa6-brands:x-twitter" size="1.25rem"/>
-                        </NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink class="icon-btn" to="https://www.instagram.com/bravco_/" target="_blank">
-                            <Icon name="fa6-brands:instagram" size="1.25rem"/>
-                        </NuxtLink>
-                    </li>
                 </ul>
             </nav>
         </header>
@@ -67,12 +57,6 @@
                     </li>
                     <li>
                         <NuxtLink to="https://github.com/Bravco">GitHub</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="https://twitter.com/bravco_">Twitter</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="https://www.instagram.com/bravco_/">Instagram</NuxtLink>
                     </li>
                 </ul>
             </div>
