@@ -2,7 +2,7 @@ export { Project };
 
 declare global {
     interface Project {
-        id: number,
+        id: string,
         isDark: boolean,
         title: string,
         url: string,

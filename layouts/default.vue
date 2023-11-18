@@ -5,12 +5,12 @@
                 <Logo/>
                 <ul class="socials">
                     <li>
-                        <NuxtLink class="icon-btn" to="mailto:a.hamracek@gmail.com" target="_blank">
+                        <NuxtLink class="icon-btn" to="mailto:a.hamracek@gmail.com">
                             <Icon name="fa6-solid:envelope" size="1.25rem"/>
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink class="icon-btn" to="tel:+421949725726" target="_blank">
+                        <NuxtLink class="icon-btn" to="tel:+421949725726">
                             <Icon name="fa6-solid:phone" size="1.25rem"/>
                         </NuxtLink>
                     </li>
@@ -55,8 +55,28 @@
                     <li>
                         <NuxtLink to="tel:+421949725726">+421 949 725 726</NuxtLink>
                     </li>
+                </ul>
+                <ul class="footer-list">
                     <li>
-                        <NuxtLink to="https://github.com/Bravco">GitHub</NuxtLink>
+                        <h3>Socials</h3>
+                    </li>
+                    <li>
+                        <NuxtLink to="https://github.com/Bravco" target="_blank">
+                            <Icon name="fa6-brands:github"/>
+                            GitHub
+                        </NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="https://leetcode.com/Bravco" target="_blank">
+                            <Icon name="simple-icons:leetcode"/>
+                            LeetCode
+                        </NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="https://instagram.com/bravco_/" target="_blank">
+                            <Icon name="fa6-brands:instagram"/>
+                            Instagram
+                        </NuxtLink>
                     </li>
                 </ul>
             </div>

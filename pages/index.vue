@@ -1,14 +1,32 @@
 <template>
-    <div class="main-wrapper">
-        <Hero/>
-        <Latest :projects="latestProjects"/>
-    </div>
+    <Hero/>
+    <Featured :projects="featuredProjects"/>
 </template>
 
 <script lang="ts" setup>
-    const latestProjects : Project[] = [
+    const featuredProjects : Project[] = [
         {
-            id: 0,
+            id: "najlacnejsia-autopozicovna",
+            isDark: false,
+            title: "Najlacnejšia Autopožičovňa",
+            url: "https://najlacnejsia-autopozicovna.netlify.app",
+            logoUrl: "/images/najlacnejsia-autopozicovna-logo.webp",
+            bgUrl: "/images/najlacnejsia-autopozicovna-background.webp",
+            bgColor: "#ECF1F9",
+            paragraphTitle: "A website for local car rental business.",
+            techIcons: [
+                "logos:nuxt-icon",
+                "logos:google-gmail",
+                "logos:netlify-icon",
+            ],
+            githubRepoUrl: "https://github.com/Bravco/car-rental",
+            status: {
+                message: "Published",
+                negative: false,
+            },
+        },
+        {
+            id: "portfolio",
             isDark: false,
             title: "Portfolio",
             url: "/",
@@ -27,7 +45,7 @@
             },
         },
         {
-            id: 1,
+            id: "metagem",
             isDark: false,
             title: "Metagem",
             url: "https://metagem.pro",
@@ -48,7 +66,7 @@
             },
         },
         {
-            id: 2,
+            id: "badboys",
             isDark: true,
             title: "BadBoys",
             url: "https://badboys.netlify.app",
@@ -68,7 +86,7 @@
             },
         },
         {
-            id: 3,
+            id: "cowlendar",
             isDark: false,
             title: "Cowlendar",
             url: "https://bravco.github.io/cowlendar/",
@@ -90,11 +108,3 @@
         },
     ];
 </script>
-
-<style scoped>
-    .main-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 8rem;
-    }
-</style>

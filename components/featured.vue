@@ -1,7 +1,7 @@
 <template>
     <div>
-        <section class="latest">
-            <h2>Latest projects</h2>
+        <section class="featured">
+            <h2>Featured projects</h2>
             <div class="viewport">
                 <div class="content">
                     <button 
@@ -69,18 +69,18 @@
                     <div class="paragraph-wrapper">
                         <div class="paragraph-toggle">
                             <button 
-                                @click="paragraphMode = ParagraphMode.STORY"
-                                :class="['paragraph-toggle-btn', { active: paragraphMode === ParagraphMode.STORY }]"
+                                @click="isStory = true"
+                                :class="['paragraph-toggle-btn', { active: isStory }]"
                             >Story</button>
                             <button 
-                                @click="paragraphMode = ParagraphMode.TECH"
-                                :class="['paragraph-toggle-btn', { active: paragraphMode === ParagraphMode.TECH }]"
+                                @click="isStory = false"
+                                :class="['paragraph-toggle-btn', { active: !isStory }]"
                             >Tech</button>
                         </div>
                         <ContentDoc 
-                            :path="`${lastSelectedProject.title.toLowerCase()}-${paragraphMode}`" 
+                            :path="`${lastSelectedProject.id}-${isStory ? 'story' : 'tech'}`" 
                             :head="false"
-                        />
+                        ><template #not-found/></ContentDoc>
                         <NuxtLink 
                             v-if="lastSelectedProject.githubRepoUrl" 
                             class="paragraph-github-link" 
@@ -98,11 +98,6 @@
 </template>
 
 <script lang="ts" setup>
-    enum ParagraphMode {
-        STORY = "story",
-        TECH = "tech",
-    }
-
     // @ts-ignore
     import ScrollBooster from "scrollbooster";
 
@@ -114,16 +109,15 @@
     });
 
     const isDragging = ref<boolean>(false);
-    const selectedProjectId = ref<number | null>(null);
+    const selectedProjectId = ref<string | null>(null);
     const lastSelectedProject = ref<any>(null);
-    const paragraphMode = ref<ParagraphMode>(ParagraphMode.STORY);
+    const isStory = ref<boolean>(true);
     
     const projectContainerStyle = computed(() => {
         if (lastSelectedProject.value) {
             return {
                 "color": lastSelectedProject.value.isDark ? "white" : "var(--color-text)",
                 "background-color": lastSelectedProject.value.bgColor,
-                //"background-image": `url('${lastSelectedProject.value.bgUrl}')`,
                 "text-shadow": `1px 1px 2px ${lastSelectedProject.value.isDark ? "black" : "white"}`,
             };
         } else {
@@ -150,7 +144,7 @@
         }
     });
 
-    async function selectProject(event : MouseEvent, id : number) {
+    async function selectProject(event : MouseEvent, id : string) {
         if (isDragging.value) return;
 
         if (process.client) {
@@ -174,7 +168,7 @@
 </script>
 
 <style scoped>
-    .latest {
+    .featured {
         display: flex;
         flex-direction: column;
         gap: 2rem;
