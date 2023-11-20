@@ -72,12 +72,6 @@
                             LeetCode
                         </NuxtLink>
                     </li>
-                    <li>
-                        <NuxtLink to="https://instagram.com/bravco_/" target="_blank">
-                            <Icon name="fa6-brands:instagram"/>
-                            Instagram
-                        </NuxtLink>
-                    </li>
                 </ul>
             </div>
         </footer>

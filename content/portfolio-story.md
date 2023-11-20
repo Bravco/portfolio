@@ -1,1 +1,0 @@
-The reason I created my personal portfolio was to showcase my web development work, increasing my chances of landing potentional clients.

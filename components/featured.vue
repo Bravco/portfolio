@@ -67,18 +67,8 @@
                         </div>
                     </div>
                     <div class="paragraph-wrapper">
-                        <div class="paragraph-toggle">
-                            <button 
-                                @click="isStory = true"
-                                :class="['paragraph-toggle-btn', { active: isStory }]"
-                            >Story</button>
-                            <button 
-                                @click="isStory = false"
-                                :class="['paragraph-toggle-btn', { active: !isStory }]"
-                            >Tech</button>
-                        </div>
                         <ContentDoc 
-                            :path="`${lastSelectedProject.id}-${isStory ? 'story' : 'tech'}`" 
+                            :path="`${lastSelectedProject.id}`" 
                             :head="false"
                         ><template #not-found/></ContentDoc>
                         <NuxtLink 
@@ -111,7 +101,6 @@
     const isDragging = ref<boolean>(false);
     const selectedProjectId = ref<string | null>(null);
     const lastSelectedProject = ref<any>(null);
-    const isStory = ref<boolean>(true);
     
     const projectContainerStyle = computed(() => {
         if (lastSelectedProject.value) {
@@ -255,7 +244,7 @@
         width: 50%;
         display: flex;
         flex-direction: column;
-        gap: 4rem;
+        gap: 2rem;
     }
 
     .project-container-info {
@@ -310,27 +299,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
-    }
-
-    .paragraph-toggle {
-        border-radius: .25rem;
-    }
-
-    .paragraph-toggle-btn {
-        padding: .25rem 1rem;
-        border-radius: .25rem;
-        font-size: 1rem;
-        font-weight: 500;
-        color: inherit;
-    }
-
-    .paragraph-toggle-btn.active {
-        color: white;
-        background-color: var(--color-primary);
-    }
-
-    .paragraph-toggle-btn.active:hover {
-        filter: none;
     }
 
     .paragraph-github-link {

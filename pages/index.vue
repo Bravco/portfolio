@@ -9,7 +9,7 @@
             id: "najlacnejsia-autopozicovna",
             isDark: false,
             title: "Najlacnejšia Autopožičovňa",
-            url: "https://najlacnejsia-autopozicovna.netlify.app",
+            url: "https://najlacnejsiaautopozicovna.sk",
             logoUrl: "/images/najlacnejsia-autopozicovna-logo.webp",
             bgUrl: "/images/najlacnejsia-autopozicovna-background.webp",
             bgColor: "#ECF1F9",
