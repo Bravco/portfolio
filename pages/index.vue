@@ -1,6 +1,7 @@
 <template>
     <Hero/>
     <Featured :projects="featuredProjects"/>
+    <Contact/>
 </template>
 
 <script lang="ts" setup>

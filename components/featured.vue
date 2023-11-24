@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="featured">
+        <section>
             <h2>Featured projects</h2>
             <div class="viewport">
                 <div class="content">
@@ -157,12 +157,6 @@
 </script>
 
 <style scoped>
-    .featured {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
     .viewport {
         height: 24rem;
         cursor: grab;

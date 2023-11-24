@@ -5,7 +5,7 @@
             <div class="hero-about">
                 <nuxt-img class="about-arrow" src="/images/arrow.svg" alt="arrow"/>
                 <p class="about-paragraph">I am a creative <span>web developer</span> who turns ideas into visually captivating and functional websites.</p>
-                <NuxtLink to="/get-website" class="cta-btn">Get website</NuxtLink>
+                <NuxtLink to="#contact" class="cta-btn">Get website</NuxtLink>
             </div>
             <div class="hero-visuals">
                 <Particles class="particles"/>
