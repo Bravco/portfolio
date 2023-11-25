@@ -1,7 +1,7 @@
 <template>
     <div>
         <section id="contact">
-            <h2>Contact me</h2>
+            <h2>Get website</h2>
             <form class="contact-form" @submit.prevent="submit">
                 <div class="inputfield">
                     <label for="firstName">First Name</label>
@@ -20,8 +20,14 @@
                     <input v-model="state.phone" type="tel" name="phone" id="phone" placeholder="" required>
                 </div>
                 <textarea v-model="state.message" class="wide" name="message" id="message" rows="8" placeholder="Tell me about your website ..." required/>
-                <button class="primary-btn wide" type="submit">Send website request</button>
-                <span v-if="success" class="success wide">Your website request has been successfully sent!</span>
+                <span v-if="success" class="success wide">
+                    <Icon name="fa6-solid:envelope-circle-check" size="1.25rem"/>
+                    Your website request has been successfully sent.
+                </span>
+                <button v-else class="primary-btn wide" type="submit" :disabled="loading">
+                    <Icon :name="loading ? 'eos-icons:loading' : 'fa6-solid:envelope'" size="1.25rem"/>
+                    <span v-if="!loading">Send website request</span>
+                </button>
             </form>
         </section>
     </div>
@@ -30,6 +36,7 @@
 <script lang="ts" setup>
     const runtimeConfig = useRuntimeConfig();
 
+    const loading = ref<boolean>(false);
     const success = ref<boolean>(false);
     const state = reactive({
         firstName: "",
@@ -40,6 +47,8 @@
     });
 
     async function submit() {
+        loading.value = true;
+
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
@@ -59,7 +68,10 @@
         });
 
         const result = await response.json();
-        if (result.success) success.value = true;
+        if (result.success) {
+            success.value = true;
+            loading.value = false;
+        }
     }
 </script>
 
@@ -97,7 +109,7 @@
     .inputfield:has(input:focus) label, .inputfield:has(input:not(:placeholder-shown)) label {
         top: 0;
         font-size: .75rem;
-        background-color: white;
+        background-color: var(--color-background-primary);
         opacity: 1;
     }
 

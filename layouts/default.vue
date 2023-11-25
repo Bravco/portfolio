@@ -26,7 +26,7 @@
             <slot/>
         </main>
         <footer>
-            <nuxt-img class="background-wave" src="/images/wave.svg" alt="wave"/>
+            <NuxtImg class="background-wave" src="/images/wave.svg" alt="wave"/>
             <div class="footer-content">
                 <div class="footer-list">
                     <Logo/>
@@ -101,7 +101,7 @@
     }
 
     footer .background-wave {
-        width: 100dvw;
+        width: 100%;
         height: calc(100% + var(--content-margin-vertical) + var(--footer-margin-top));
         position: absolute;
         left: 0;
@@ -121,7 +121,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: .25rem;
+        gap: .5rem;
     }
 
     .copyright {

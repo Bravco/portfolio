@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/image",
     "@nuxt/content",
-    "@invictus.codes/nuxt-vuetify",
   ],
   css: [
     "@/assets/main.css",

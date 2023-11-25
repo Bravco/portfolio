@@ -2,33 +2,29 @@
     <div>
         <section>
             <h2>Featured projects</h2>
-            <div class="viewport">
-                <div class="content">
-                    <button 
-                        v-for="project in projects" 
-                        :key="project.id"
-                        @click="selectProject($event, project.id)" 
-                        :id="`project-${project.id}`"
-                        class="project"
-                    >
-                        <nuxt-img class="project-logo" :src="project.logoUrl" :alt="`${project.title}-logo`"/>
-                        <nuxt-img class="project-bg" :style="{ 'background-color': project.bgColor }" :src="project.bgUrl" :alt="`${project.title}-image`"/>
-                    </button>
+            <div class="viewport-wrapper">
+                <div class="viewport">
+                    <div class="content">
+                        <button 
+                            v-for="project in projects" 
+                            :key="project.id"
+                            @click="selectProject($event, project.id)" 
+                            :id="`project-${project.id}`"
+                            class="project"
+                        >
+                            <NuxtImg class="project-logo" :src="project.logoUrl" :alt="`${project.title}-logo`"/>
+                            <NuxtImg class="project-bg" :style="{ 'background-color': project.bgColor }" :src="project.bgUrl" :alt="`${project.title}-image`"/>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div 
                 :class="['project-container', { active: selectedProjectId !== null }]"
                 :style="projectContainerStyle"
             >
-                <nuxt-img 
+                <NuxtImg 
                     v-if="lastSelectedProject"
                     class="project-bg" 
-                    :src="lastSelectedProject.bgUrl" 
-                    :alt="`${lastSelectedProject.title}-image`"
-                />
-                <nuxt-img 
-                    v-if="lastSelectedProject"
-                    class="project-bg project-bg-effect" 
                     :src="lastSelectedProject.bgUrl" 
                     :alt="`${lastSelectedProject.title}-image`"
                 />
@@ -44,7 +40,7 @@
                         <span 
                             :class="['project-container-status', { negative: lastSelectedProject.status.negative }]"
                         >{{ lastSelectedProject.status.message }}</span>
-                        <nuxt-img 
+                        <NuxtImg 
                             class="project-container-logo" 
                             :src="lastSelectedProject.logoUrl" 
                             :alt="`${lastSelectedProject.title}-logo`"
@@ -56,10 +52,10 @@
                                 <Icon name="fa6-solid:up-right-from-square"/>
                             </NuxtLink>
                         </h1>
-                        <div class="project-container-technologies">
+                        <div class="project-container-tech">
                             <span>Tech stack</span>
                             <div :class="['vl', { light: lastSelectedProject.isDark }]"></div>
-                            <ul class="project-container-technologies-list">
+                            <ul class="project-container-tech-list">
                                 <li v-for="icon in lastSelectedProject.techIcons">
                                     <Icon :name="icon" size="2rem"/>
                                 </li>
@@ -105,9 +101,9 @@
     const projectContainerStyle = computed(() => {
         if (lastSelectedProject.value) {
             return {
-                "color": lastSelectedProject.value.isDark ? "white" : "var(--color-text)",
+                "color": lastSelectedProject.value.isDark ? "var(--color-background-primary)" : "var(--color-text)",
                 "background-color": lastSelectedProject.value.bgColor,
-                "text-shadow": `1px 1px 2px ${lastSelectedProject.value.isDark ? "black" : "white"}`,
+                "text-shadow": `1px 1px 2px ${lastSelectedProject.value.isDark ? "var(--color-text)" : "var(--color-background-primary)"}`,
             };
         } else {
             return {};
@@ -157,12 +153,28 @@
 </script>
 
 <style scoped>
+    h2 {
+        margin-bottom: 27rem;
+    }
+
+    .viewport-wrapper {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transform: translateY(-25rem);
+        overflow: hidden;
+        padding-top: 1rem;
+        margin-top: -1rem;
+    }
+
     .viewport {
         height: 24rem;
+        margin-inline: var(--content-margin-horizontal);
         cursor: grab;
     }
 
     .content {
+        width: max-content;
         height: 100%;
         display: flex;
         gap: 2rem;
@@ -170,10 +182,10 @@
     }
 
     .project {
-        width: 20rem;
+        aspect-ratio: 5/6;
         flex: 0 0 auto;
         position: relative;
-        transition: all 300ms;
+        transition: transform 200ms;
     }
 
     .project:hover {
@@ -182,7 +194,10 @@
     }
 
     .project-logo {
-        max-width: 40%;
+        width: 33.33%;
+        height: 2rem;
+        object-fit: contain;
+        object-position: left;
         position: absolute;
         top: 1rem;
         left: 1rem;
@@ -198,12 +213,6 @@
         object-position: right;
         border-radius: .25rem;
         z-index: -1;
-    }
-
-    .project-bg-effect {
-        transform: translate(-1rem, -1rem);
-        filter: opacity(.5) blur(1rem);
-        z-index: -2;
     }
 
     .project-container {
@@ -252,7 +261,7 @@
         padding: .25rem .5rem;
         font-size: .75rem;
         font-weight: 500;
-        color: white;
+        color: var(--color-background-primary);
         text-shadow: none;
         background-color: var(--color-success);
         border-radius: .25rem;
@@ -263,7 +272,10 @@
     }
 
     .project-container-logo {
-        max-height: 3rem;
+        width: 33.33%;
+        height: 2rem;
+        object-fit: contain;
+        object-position: left;
     }
 
     .project-container-link {
@@ -275,14 +287,14 @@
         text-decoration: underline;
     }
 
-    .project-container-technologies {
+    .project-container-tech {
         display: flex;
         align-items: center;
         gap: 1rem;
         margin-top: 1rem;
     }
 
-    .project-container-technologies-list {
+    .project-container-tech-list {
         display: flex;
         align-items: center;
         gap: .75rem;
@@ -308,14 +320,6 @@
     @media only screen and (max-width: 768px) {
         .viewport {
             height: 20rem;
-        }
-
-        .content {
-            overflow-x: scroll;
-        }
-
-        .project {
-            width: 16rem;
         }
 
         .project-container {

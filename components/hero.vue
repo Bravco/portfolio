@@ -1,15 +1,18 @@
 <template>
     <div>
-        <nuxt-img class="background-wave" src="/images/wave.svg" alt="wave"/>
+        <NuxtImg class="background-wave" src="/images/wave.svg" alt="wave"/>
         <div class="hero">
             <div class="hero-about">
-                <nuxt-img class="about-arrow" src="/images/arrow.svg" alt="arrow"/>
+                <NuxtImg class="about-arrow" src="/images/arrow.svg" alt="arrow"/>
                 <p class="about-paragraph">I am a creative <span>web developer</span> who turns ideas into visually captivating and functional websites.</p>
-                <NuxtLink to="#contact" class="cta-btn">Get website</NuxtLink>
+                <NuxtLink to="#contact" class="cta-btn">
+                    Get website
+                    <Icon name="fa6-solid:arrow-turn-down"/>
+                </NuxtLink>
             </div>
             <div class="hero-visuals">
                 <Particles class="particles"/>
-                <nuxt-img class="me-img" src="/images/me.webp" alt="me"/>
+                <NuxtImg class="hero-img" src="/images/hero.webp" alt="hero"/>
             </div>
         </div>
     </div>
@@ -67,13 +70,15 @@
     }
 
     .cta-btn {
-        display: grid;
-        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
         position: relative;
         text-transform: uppercase;
         font-size: 1rem;
         font-weight: 500;
-        color: white;
+        color: var(--color-background-primary);
     }
 
     .cta-btn::before, .cta-btn::after {
@@ -85,7 +90,7 @@
     .cta-btn::before {
         top: calc(-2px - .25rem);
         left: calc(-2px - .25rem);
-        border: 2px solid white;
+        border: 2px solid var(--color-background-primary);
         border-radius: .25rem;
     }
 
@@ -105,13 +110,14 @@
     .cta-btn:hover::after {
         top: 0;
         left: 0;
+        background-color: var(--color-accent);
     }
 
     .hero-visuals {
         position: relative;
     }
 
-    .me-img {
+    .hero-img {
         width: 24rem;
         position: absolute;
         bottom: calc(0px - var(--hero-margin-bottom));
@@ -135,7 +141,7 @@
             display: none;
         }
 
-        .me-img {
+        .hero-img {
             width: 100%;
             position: unset;
         }

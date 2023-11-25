@@ -27,25 +27,6 @@
             },
         },
         {
-            id: "portfolio",
-            isDark: false,
-            title: "Portfolio",
-            url: "/",
-            logoUrl: "/images/portfolio-logo.webp",
-            bgUrl: "/images/portfolio-background.webp",
-            bgColor: "#dbf0ff",
-            paragraphTitle: "A personal portfolio website to illustrate my web development work.",
-            techIcons: [
-                "logos:nuxt-icon",
-                "logos:netlify-icon",
-            ],
-            githubRepoUrl: "https://github.com/Bravco/portfolio",
-            status: {
-                message: "Published",
-                negative: false,
-            },
-        },
-        {
             id: "metagem",
             isDark: false,
             title: "Metagem",
