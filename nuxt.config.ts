@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
-      title: "Andrej Hamráček",
+      title: "Andrej Hamráček - Website Developer",
       meta: [
         {
           name: "author",
@@ -27,11 +27,11 @@ export default defineNuxtConfig({
         },
         {
           name: "title",
-          content: "Andrej Hamráček - Web Developer",
+          content: "Andrej Hamráček - Website Developer",
         },
         {
           name: "description",
-          content: "I am a creative web developer who turns ideas into visually captivating and functional websites.",
+          content: "I am a creative web developer who turns ideas into visually captivating and functional websites. Solid and professional website development. Includes design, programming, hosting and setuping up domain!",
         },
       ],
     },
