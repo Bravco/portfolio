@@ -5,19 +5,19 @@
             <form class="contact-form" @submit.prevent="submit">
                 <div class="inputfield">
                     <label for="firstName">First Name</label>
-                    <input v-model="state.firstName" type="text" name="firstName" id="firstName" placeholder="" required>
+                    <input v-model="state.firstName" type="text" name="firstName" id="firstName" placeholder=" " required>
                 </div>
                 <div class="inputfield">
                     <label for="lastName">Last Name</label>
-                    <input v-model="state.lastName" type="text" name="lastName" id="lastName" placeholder="" required>
+                    <input v-model="state.lastName" type="text" name="lastName" id="lastName" placeholder=" " required>
                 </div>
                 <div class="inputfield">
                     <label for="email">Email</label>
-                    <input v-model="state.email" type="email" name="email" id="email" placeholder="" required>
+                    <input v-model="state.email" type="email" name="email" id="email" placeholder=" " required>
                 </div>
                 <div class="inputfield">
                     <label for="phone">Phone</label>
-                    <input v-model="state.phone" type="tel" name="phone" id="phone" placeholder="" required>
+                    <input v-model="state.phone" type="tel" name="phone" id="phone" placeholder=" " required>
                 </div>
                 <textarea v-model="state.message" class="wide" name="message" id="message" rows="8" placeholder="Tell me about your website ..." required/>
                 <span v-if="success" class="success wide">
@@ -106,7 +106,8 @@
         transition-duration: 300ms;
     }
 
-    .inputfield:has(input:focus) label, .inputfield:has(input:not(:placeholder-shown)) label {
+    .inputfield:has(input:focus) label,
+    .inputfield:has(input:not(:placeholder-shown)) label {
         top: 0;
         font-size: .75rem;
         background-color: var(--color-background-primary);

@@ -79,7 +79,7 @@ input:focus, textarea:focus {
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input:-webkit-autofill:active {
     box-shadow: 0 0 0 2rem var(--color-background-primary) inset !important;
     -webkit-box-shadow: 0 0 0 2rem var(--color-background-primary) inset !important;
 }
