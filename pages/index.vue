@@ -7,6 +7,25 @@
 <script lang="ts" setup>
     const featuredProjects : Project[] = [
         {
+            id: "fyzioterapia-a-masaze",
+            isDark: false,
+            title: "Fyzioterapia a masáže",
+            url: "https://fyzioterapiaamasaze.sk",
+            logoUrl: "/images/fyzioterapia-a-masaze-logo.webp",
+            bgUrl: "/images/fyzioterapia-a-masaze-background.webp",
+            bgColor: "#f3efec",
+            paragraphTitle: "A website for physiotherapy and massage business in Púchov.",
+            techIcons: [
+                "skill-icons:webflow",
+                "logos:google-maps",
+                "logos:netlify-icon",
+            ],
+            status: {
+                message: "Published",
+                negative: false,
+            },
+        },
+        {
             id: "najlacnejsia-autopozicovna",
             isDark: false,
             title: "Najlacnejšia Autopožičovňa",
