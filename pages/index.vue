@@ -7,6 +7,25 @@
 <script lang="ts" setup>
     const featuredProjects : Project[] = [
         {
+            id: "briketyspis",
+            isDark: false,
+            title: "Brikety Spiš",
+            url: "https://briketyspis.sk",
+            logoUrl: "/images/briketyspis-logo.webp",
+            bgUrl: "/images/briketyspis-background.webp",
+            bgColor: "#ffead1",
+            paragraphTitle: "Personalized web experience for Brikety Spiš business.",
+            techIcons: [
+                "logos:nuxt-icon",
+                "SplineIcon",
+                "logos:netlify-icon",
+            ],
+            status: {
+                message: "Published",
+                negative: false,
+            },
+        },
+        {
             id: "fyzioterapia-a-masaze",
             isDark: false,
             title: "Fyzioterapia a masáže",
