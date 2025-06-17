@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <canvas id="canvas" width="384" height="256"/>
-    </div>
+    <canvas id="canvas" width="384" height="256"/>
 </template>
 
 <script setup>

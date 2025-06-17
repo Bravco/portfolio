@@ -14,9 +14,9 @@
                         <Icon name="fa6-solid:arrow-turn-down"/>
                     </NuxtLink>
                 </div>
-                <div class="relative mb-8">
-                    <Particles class="particles"/>
-                    <NuxtImg class="w-96 absolute inset-0 top-8 left-8" src="/images/hero.webp" alt="hero"/>
+                <div class="relative sm:mb-8 sm:mr-8">
+                    <Particles class="sm:inline hidden"/>
+                    <NuxtImg class="w-full sm:absolute sm:inset-0 sm:top-8 sm:left-8" src="/images/hero.webp" alt="hero"/>
                 </div>
             </div>
         </section>

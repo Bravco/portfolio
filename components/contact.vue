@@ -20,18 +20,20 @@
                     <input v-model="state.phone" type="tel" name="phone" id="phone" placeholder=" " required>
                 </div>
                 <textarea v-model="state.message" class="col-span-2" name="message" id="message" rows="8" placeholder="Tell me about your website ..." required/>
-                <span v-if="!loading && success" class="col-span-2 flex items-center justify-center gap-2 text-[var(--color-success)]">
-                    <Icon name="fa6-solid:envelope-circle-check"/>
-                    Your website request has been successfully sent.
-                </span>
-                <button class="primary-btn md:!w-1/2 mt-4 col-span-2" type="submit" :disabled="loading">
-                    <Icon :name="loading ? 'eos-icons:loading' : 'fa6-solid:envelope'" size="1.25rem"/>
-                    <span v-if="!loading">Send website request</span>
-                </button>
-                <span v-if="!loading && error" class="col-span-2 flex items-center justify-center gap-2 text-[var(--color-error)]">
-                    <Icon name="fa6-solid:circle-exclamation"/>
-                    Something went wrong.
-                </span>
+                <div class="mt-4 col-span-2 grid place-items-center">
+                    <span v-if="!loading && success" class="flex items-center justify-center gap-2 text-[var(--color-success)]">
+                        <Icon name="fa6-solid:envelope-circle-check"/>
+                        Your website request has been successfully sent.
+                    </span>
+                    <span v-if="!loading && error" class="flex items-center justify-center gap-2 text-[var(--color-error)]">
+                        <Icon name="fa6-solid:circle-exclamation"/>
+                        Something went wrong.
+                    </span>
+                    <button v-if="!success && !error" class="primary-btn md:!w-1/2" type="submit" :disabled="loading">
+                        <Icon :name="loading ? 'eos-icons:loading' : 'fa6-solid:envelope'" size="1.25rem"/>
+                        <span v-if="!loading">Send website request</span>
+                    </button>
+                </div>
             </form>
         </section>
     </div>
