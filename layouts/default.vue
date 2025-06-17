@@ -22,7 +22,7 @@
                 </ul>
             </nav>
         </header>
-        <main class="max-w-[var(--max-width)] mx-auto px-8 flex flex-col gap-32 overflow-x-hidden">
+        <main class="max-w-[var(--max-width)] mx-auto px-8 flex flex-col gap-32">
             <slot/>
         </main>
         <footer class="relative mt-32 px-8 pb-8 pt-32">

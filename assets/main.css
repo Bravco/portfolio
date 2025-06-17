@@ -21,9 +21,13 @@
     --max-width: 1024px;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
-}
+}   
 
 body {
     color: var(--color-text);
