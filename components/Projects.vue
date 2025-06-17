@@ -2,30 +2,30 @@
     <div>
         <section id="projects" class="flex flex-col gap-8">
             <h2>Featured Projects</h2>
-            <div class="h-96 relative overflow-hidden">
-                <div class="w-full absolute left-0 flex gap-8 overflow-x-scroll">
-                    <NuxtLink 
-                        v-for="(project, index) in projects" 
-                        :key="index" 
-                        :to="project.url"
-                        target="_blank"
-                        class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[0.95] transition-transform"
-                    >
-                        <NuxtImg
-                            class="w-full h-full absolute inset-0 object-cover object-right rounded -z-1"
-                            :style="{ 'background-color': project.bgColor }"
-                            :src="project.bgUrl"
-                            :alt="`${project.title} background`"
-                        />
-                        <NuxtImg class="min-h-6" :src="project.logoUrl" :alt="`${project.title} logo`"/>
-                    </NuxtLink>
-                </div>
+            <div id="draggable" class="flex gap-8">
+                <NuxtLink 
+                    v-for="(project, index) in projects" 
+                    :key="index" 
+                    :to="project.url"
+                    target="_blank"
+                    class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[0.95] transition-transform"
+                >
+                    <NuxtImg
+                        class="w-full h-full absolute inset-0 object-cover object-right rounded -z-1"
+                        :style="{ 'background-color': project.bgColor }"
+                        :src="project.bgUrl"    
+                        :alt="`${project.title} background`"
+                    />
+                    <NuxtImg class="min-h-6" :src="project.logoUrl" :alt="`${project.title} logo`"/>
+                </NuxtLink>
             </div>
         </section>
     </div>
 </template>
 
 <script setup lang="ts">
+    import Draggable from "gsap/Draggable";
+
     const projects = [
         {
             title: "Brikety Spiš",
@@ -70,4 +70,33 @@
             bgColor: "#EDEFFF"
         }
     ];
+
+    onMounted(() => {
+        const parent = document.querySelector("#draggable");
+
+        Draggable.create(parent, {
+            type: "x",
+            inertia: true,
+            bounds: {
+                minX: -(parent.scrollWidth - parent.offsetWidth),
+                maxX: 0
+            }
+        });
+
+        const updateBounds = () => {
+            const instance = Draggable.get(parent);
+            if (instance) {
+                instance.applyBounds({
+                    minX: -(parent.scrollWidth - parent.offsetWidth),
+                    maxX: 0
+                });
+            }
+        };
+
+        window.addEventListener("resize", updateBounds);
+
+        onBeforeUnmount(() => {
+            window.removeEventListener("resize", updateBounds);
+        });
+    });
 </script>

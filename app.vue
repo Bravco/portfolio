@@ -11,6 +11,14 @@
 </template>
 
 <script setup lang="ts">
+    import InertiaPlugin from "gsap/InertiaPlugin";
+
+    const gsap = useGSAP();
+
+    onBeforeMount(() => {
+        gsap.registerPlugin(InertiaPlugin);
+    });
+
     onMounted(() => {
         const trailer: HTMLDivElement | null = document.querySelector("#trailer");
 
