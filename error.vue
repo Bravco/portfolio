@@ -1,13 +1,13 @@
 <template>
     <div>
-        <section>
-            <div class="text">
-                <h1>{{ error.statusCode }}</h1>
-                <p>{{ error.message }}</p>
+        <section class="h-screen flex flex-col items-center justify-center gap-8">
+            <div class="text-center">
+                <p>Upps... something went wrong.</p>
+                <h1 class="text-xl">Error <span class="font-medium">{{ error.statusCode }}</span></h1>
             </div>
-            <button @click="clearError({ redirect: '/' })" class="primary-btn">
+            <button @click="clearError({ redirect: '/' })" class="w-fit primary-btn">
                 <Icon name="fa6-solid:arrow-left"/>
-                Return to home
+                Back to homepage
             </button>
         </section>
     </div>
@@ -16,17 +16,3 @@
 <script lang="ts" setup>
     defineProps(["error"]);
 </script>
-
-<style scoped>
-    section, .text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    section {
-        height: calc(100dvh - calc(var(--content-margin-vertical) * 2));
-        gap: 1rem;
-    }
-</style>
