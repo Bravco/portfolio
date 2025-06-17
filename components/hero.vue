@@ -1,84 +1,32 @@
 <template>
     <div>
-        <NuxtImg class="background-wave" src="/images/wave.svg" alt="wave"/>
-        <div class="hero">
-            <div class="hero-about">
-                <NuxtImg class="about-arrow" src="/images/arrow.svg" alt="arrow"/>
-                <p class="about-paragraph">I am a creative <span>web developer</span> who turns ideas into visually captivating and functional websites.</p>
-                <NuxtLink to="#contact" class="cta-btn">
-                    Get website
-                    <Icon name="fa6-solid:arrow-turn-down"/>
-                </NuxtLink>
+        <section id="hero">
+            <NuxtImg class="w-full h-1/2 absolute inset-0 object-cover object-bottom -z-10" src="/images/wave.svg" alt="wave"/>
+            <div class="hero flex md:flex-row flex-col gap-16 items-start justify-between">
+                <div class="relative flex flex-col items-start gap-8">
+                    <NuxtImg class="h-20 absolute -top-24 left-40" src="/images/arrow.svg" alt="arrow"/>
+                    <p class="about-paragraph md:w-2/3">I am a creative <span class="text-[var(--color-primary)] font-medium">web developer</span> who turns ideas into visually captivating and functional websites.</p>
+                    <NuxtLink 
+                        to="#contact" 
+                        class="cta-btn relative flex items-center justify-center gap-2 text-[var(--color-background-primary)] uppercase font-medium"
+                    >
+                        Get website
+                        <Icon name="fa6-solid:arrow-turn-down"/>
+                    </NuxtLink>
+                </div>
+                <div class="relative mb-8">
+                    <Particles class="particles"/>
+                    <NuxtImg class="w-96 absolute inset-0 top-8 left-8" src="/images/hero.webp" alt="hero"/>
+                </div>
             </div>
-            <div class="hero-visuals">
-                <Particles class="particles"/>
-                <NuxtImg class="hero-img" src="/images/hero.webp" alt="hero"/>
-            </div>
-        </div>
+        </section>
     </div>
 </template>
 
 <style scoped>
-    .background-wave {
-        width: 100%;
-        height: 50%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        object-position: bottom;
-        z-index: -10;
-    }
-
-    .hero {
-        --hero-margin-bottom: 6rem;
-
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-bottom: var(--hero-margin-bottom);
-    }
-
-    .hero-about {
-        display: flex;
-        flex-direction: column;
-        justify-self: flex-start;
-        align-items: flex-start;
-        gap: 2rem;
-        position: relative;
-    }
-
-    .about-arrow {
-        height: 5rem;
-        position: absolute;
-        top: -6rem;
-        right: 2rem;
-    }
-
-    .about-paragraph {
-        width: 18rem;
-    }
-
-    .about-paragraph span {
-        font-weight: bold;
-        color: var(--color-primary);
-    }
-
     .cta-btn, .cta-btn::before, .cta-btn::after {
         width: 12rem;
         height: 2.5rem;
-    }
-
-    .cta-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: .5rem;
-        position: relative;
-        text-transform: uppercase;
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--color-background-primary);
     }
 
     .cta-btn::before, .cta-btn::after {
@@ -103,47 +51,13 @@
     }
 
     .cta-btn:hover::before {
-        top: -2px;
-        left: -2px;
+        top: 0;
+        left: 0;
     }
 
     .cta-btn:hover::after {
         top: 0;
         left: 0;
         background-color: var(--color-accent);
-    }
-
-    .hero-visuals {
-        position: relative;
-    }
-
-    .hero-img {
-        width: 24rem;
-        position: absolute;
-        bottom: calc(0px - var(--hero-margin-bottom));
-        right: 0;
-    }
-
-    @media only screen and (max-width: 384px) {
-        .about-paragraph {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 512px) {
-        .hero-visuals {
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        .particles {
-            display: none;
-        }
-
-        .hero-img {
-            width: 100%;
-            position: unset;
-        }
     }
 </style>

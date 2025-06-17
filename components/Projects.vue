@@ -1,0 +1,73 @@
+<template>
+    <div>
+        <section id="projects" class="flex flex-col gap-8">
+            <h2>Featured Projects</h2>
+            <div class="h-96 relative overflow-hidden">
+                <div class="w-full absolute left-0 flex gap-8 overflow-x-scroll">
+                    <NuxtLink 
+                        v-for="(project, index) in projects" 
+                        :key="index" 
+                        :to="project.url"
+                        target="_blank"
+                        class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[0.95] transition-transform"
+                    >
+                        <NuxtImg
+                            class="w-full h-full absolute inset-0 object-cover object-right rounded -z-1"
+                            :style="{ 'background-color': project.bgColor }"
+                            :src="project.bgUrl"
+                            :alt="`${project.title} background`"
+                        />
+                        <NuxtImg class="min-h-6" :src="project.logoUrl" :alt="`${project.title} logo`"/>
+                    </NuxtLink>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+
+<script setup lang="ts">
+    const projects = [
+        {
+            title: "Brikety Spiš",
+            url: "https://briketyspis.sk",
+            logoUrl: "/images/projects/briketyspis-logo.webp",
+            bgUrl: "/images/projects/briketyspis-background.webp",
+            bgColor: "#ffead1"
+        },
+        {
+            title: "Fyzioterapia a masáže",
+            url: "https://fyzioterapiaamasaze.sk",
+            logoUrl: "/images/projects/fyzioterapia-a-masaze-logo.webp",
+            bgUrl: "/images/projects/fyzioterapia-a-masaze-background.webp",
+            bgColor: "#f3efec"
+        },
+        {
+            title: "Najlacnejšia Autopožičovňa",
+            url: "https://najlacnejsiaautopozicovna.sk",
+            logoUrl: "/images/projects/najlacnejsia-autopozicovna-logo.webp",
+            bgUrl: "/images/projects/najlacnejsia-autopozicovna-background.webp",
+            bgColor: "#ECF1F9"
+        },
+        {
+            title: "Metagem",
+            url: "https://metagem.pro",
+            logoUrl: "/images/projects/metagem-logo.webp",
+            bgUrl: "/images/projects/metagem-background.webp",
+            bgColor: "#ebf1fa"
+        },
+        {
+            title: "BadBoys",
+            url: "https://badboys.netlify.app",
+            logoUrl: "/images/projects/badboys-logo.webp",
+            bgUrl: "/images/projects/badboys-background.webp",
+            bgColor: "#242424"
+        },
+        {
+            title: "Cowlendar",
+            url: "https://bravco.github.io/cowlendar/",
+            logoUrl: "/images/projects/cowlendar-logo.webp",
+            bgUrl: "/images/projects/cowlendar-background.webp",
+            bgColor: "#EDEFFF"
+        }
+    ];
+</script>

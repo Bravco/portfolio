@@ -1,14 +1,11 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    "nuxt-icon",
     "@nuxt/image",
-    "@nuxt/content",
+    "@nuxt/icon",
+    "@nuxtjs/tailwindcss"
   ],
-  css: [
-    "@/assets/main.css",
-  ],
+  css: [ "@/assets/main.css" ],
   runtimeConfig: {
     public: {
       WEB3FORMS_ACCESS_KEY: process.env.WEB3FORMS_ACCESS_KEY,
@@ -19,7 +16,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
-      title: "Andrej Hamráček - Website Developer",
+      title: "Andrej Hamráček - Web Developer",
       meta: [
         {
           name: "author",
@@ -27,7 +24,7 @@ export default defineNuxtConfig({
         },
         {
           name: "title",
-          content: "Andrej Hamráček - Website Developer",
+          content: "Andrej Hamráček - Web Developer",
         },
         {
           name: "description",
@@ -39,10 +36,5 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
   },
-  image: {
-    provider: "netlify",
-    netlify: {
-      baseURL: process.env.IMAGES_URL,
-    },
-  },
+  compatibilityDate: "2025-06-17"
 })

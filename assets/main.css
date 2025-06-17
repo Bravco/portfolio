@@ -2,9 +2,6 @@
 
 * {
     font-family: "Rubik", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 :root {
@@ -15,9 +12,7 @@
     --color-success: #1FED58;
     --color-error: #FF5353;
 
-    --content-margin-vertical: 4rem;
-    --content-margin-horizontal: 20%;
-    --content-margin: var(--content-margin-vertical) var(--content-margin-horizontal);
+    --max-width: 1024px;
 }
 
 html {
@@ -29,29 +24,14 @@ body {
     background-color: var(--color-background-primary);
 }
 
-main {
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 8rem;
-    margin: var(--content-margin);
-}
-
 h2 {
-    margin-bottom: 2rem;
     color: var(--color-accent);
     text-transform: uppercase;
-    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 2px;
 }
 
-li {
-    list-style: none;
-}
-
 a, button {
-    color: var(--color-text);
     text-decoration: none;
     cursor: pointer;
 }
@@ -68,7 +48,6 @@ input, textarea {
     border: 1px solid var(--color-text);
     border-radius: .25rem;
     outline: none;
-    font-size: 1rem;
     background: transparent;
 }
 
@@ -94,7 +73,6 @@ textarea {
     align-items: center;
     gap: .5rem;
     text-transform: uppercase;
-    font-size: 1rem;
     font-weight: 500;
     border-radius: .25rem;
 }
@@ -141,9 +119,8 @@ textarea {
     width: 2.5rem;
     height: 2.5rem;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
+    inset: 0;
+    translate: -25% -33%;
     border-radius: 50%;
     background-color: var(--_main-color);
     z-index: -1;
@@ -160,21 +137,31 @@ textarea {
     color: var(--_accent-color);
 }
 
-.vl {
-    width: 2px;
-    height: 100%;
-    background-color: var(--color-text);
+.inputfield {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.vl.light {
+.inputfield label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    padding-inline: .25rem;
+    transform: translateY(-50%);
+    font-size: normal;
+    pointer-events: none;
+    opacity: .75;
+    transition-property: top, font-size, background-color, opacity;
+    transition-duration: 300ms;
+}
+
+.inputfield:has(input:focus) label,
+.inputfield:has(input:not(:placeholder-shown)) label {
+    top: 0;
+    font-size: 12px;
     background-color: var(--color-background-primary);
-}
-
-@media only screen and (max-width: 1024px) {
-    :root {
-        --content-margin-vertical: 2rem;
-        --content-margin-horizontal: 2rem;
-    }
+    opacity: 1;
 }
 
 @keyframes iconBtnScale {
