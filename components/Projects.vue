@@ -72,7 +72,9 @@
     ];
 
     onMounted(() => {
-        const parent = document.querySelector("#draggable");
+        const parent: HTMLElement | null = document.querySelector("#draggable");
+
+        if (!parent) return;
 
         Draggable.create(parent, {
             type: "x",
