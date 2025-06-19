@@ -5,17 +5,17 @@
                 <h1 class="text-2xl font-medium">Andrej Hamráček</h1>
                 <ul class="flex items-center gap-8">
                     <li>
-                        <NuxtLink class="icon-btn" to="mailto:a.hamracek@gmail.com" aria-label="Email">
+                        <NuxtLink data-type="link" class="interactable icon-btn" to="mailto:a.hamracek@gmail.com" aria-label="Email">
                             <Icon name="fa6-solid:envelope" size="1.25rem"/>
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink class="icon-btn" to="tel:+421949725726" aria-label="Phone Number">
+                        <NuxtLink data-type="link" class="interactable icon-btn" to="tel:+421949725726" aria-label="Phone Number">
                             <Icon name="fa6-solid:phone" size="1.25rem"/>
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink class="icon-btn" to="https://github.com/Bravco" target="_blank" aria-label="GitHub">
+                        <NuxtLink data-type="link" class="interactable icon-btn" to="https://github.com/Bravco" target="_blank" aria-label="GitHub">
                             <Icon name="fa6-brands:github" size="1.25rem"/>
                         </NuxtLink>
                     </li>
@@ -38,10 +38,10 @@
                             <h2 class="!text-[var(--color-text)]">Contact</h2>
                         </li>
                         <li>
-                            <NuxtLink class="hover:text-[var(--color-primary)] transition-colors" to="mailto:a.hamracek@gmail.com">a.hamracek@gmail.com</NuxtLink>
+                            <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="mailto:a.hamracek@gmail.com">a.hamracek@gmail.com</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink class="hover:text-[var(--color-primary)] transition-colors" to="tel:+421949725726">+421 949 725 726</NuxtLink>
+                            <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="tel:+421949725726">+421 949 725 726</NuxtLink>
                         </li>
                     </ul>
                     <ul class="flex flex-col items-start gap-2">
@@ -49,13 +49,13 @@
                             <h2 class="!text-[var(--color-text)]">Socials</h2>
                         </li>
                         <li>
-                            <NuxtLink class="hover:text-[var(--color-primary)] transition-colors" to="https://github.com/Bravco" target="_blank">
+                            <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="https://github.com/Bravco" target="_blank">
                                 <Icon name="fa6-brands:github"/>
                                 GitHub
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink class="hover:text-[var(--color-primary)] transition-colors" to="https://leetcode.com/Bravco" target="_blank">
+                            <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="https://leetcode.com/Bravco" target="_blank">
                                 <Icon name="simple-icons:leetcode"/>
                                 LeetCode
                             </NuxtLink>

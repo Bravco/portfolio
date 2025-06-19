@@ -21,6 +21,10 @@
     --max-width: 1024px;
 }
 
+html, div, button, a, input, textarea {
+    cursor: none !important;
+}
+
 html, body {
     overflow-x: hidden;
 }

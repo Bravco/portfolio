@@ -8,7 +8,8 @@
                     <p class="about-paragraph md:w-2/3">I am a creative <span class="text-[var(--color-primary)] font-medium">web developer</span> who turns ideas into visually captivating and functional websites.</p>
                     <NuxtLink 
                         to="#contact" 
-                        class="cta-btn relative flex items-center justify-center gap-2 text-[var(--color-background-primary)] uppercase font-medium"
+                        data-type="button"
+                        class="interactable cta-btn relative flex items-center justify-center gap-2 text-[var(--color-background-primary)] uppercase font-medium"
                     >
                         Get website
                         <Icon name="fa6-solid:arrow-turn-down"/>

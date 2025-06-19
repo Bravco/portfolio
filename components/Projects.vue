@@ -8,6 +8,7 @@
                     :key="index" 
                     :to="project.url"
                     target="_blank"
+                    data-type="project"
                     class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[0.95] transition-transform rounded bg-cover bg-right"
                     :style="{
                         backgroundImage: `url(${project.bgUrl})`,

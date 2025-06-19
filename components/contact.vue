@@ -5,21 +5,21 @@
             <form @submit.prevent="submit" class="md:grid grid-cols-2 flex flex-col gap-4 place-items-center">
                 <div class="inputfield">
                     <label for="firstName">First Name</label>
-                    <input v-model="state.firstName" type="text" name="firstName" id="firstName" placeholder=" " required>
+                    <input v-model="state.firstName" data-type="text" class="interactable" type="text" name="firstName" id="firstName" placeholder=" " required>
                 </div>
                 <div class="inputfield">
                     <label for="lastName">Last Name</label>
-                    <input v-model="state.lastName" type="text" name="lastName" id="lastName" placeholder=" " required>
+                    <input v-model="state.lastName" data-type="text" class="interactable" type="text" name="lastName" id="lastName" placeholder=" " required>
                 </div>
                 <div class="inputfield">
                     <label for="email">Email</label>
-                    <input v-model="state.email" type="email" name="email" id="email" placeholder=" " required>
+                    <input v-model="state.email" data-type="text" class="interactable" type="email" name="email" id="email" placeholder=" " required>
                 </div>
                 <div class="inputfield">
                     <label for="phone">Phone</label>
-                    <input v-model="state.phone" type="tel" name="phone" id="phone" placeholder=" " required>
+                    <input v-model="state.phone" data-type="text" class="interactable" type="tel" name="phone" id="phone" placeholder=" " required>
                 </div>
-                <textarea v-model="state.message" class="col-span-2" name="message" id="message" rows="8" placeholder="Tell me about your website ..." required/>
+                <textarea v-model="state.message" data-type="text" class="interactable col-span-2" name="message" id="message" rows="8" placeholder="Tell me about your website ..." required/>
                 <div class="mt-4 col-span-2 grid place-items-center">
                     <span v-if="!loading && success" class="flex items-center justify-center gap-2 text-[var(--color-success)]">
                         <Icon name="fa6-solid:envelope-circle-check"/>
@@ -29,7 +29,7 @@
                         <Icon name="fa6-solid:circle-exclamation"/>
                         Something went wrong.
                     </span>
-                    <button v-if="!success && !error" class="primary-btn md:!w-1/2" type="submit" :disabled="loading">
+                    <button v-if="!success && !error" data-type="button" class="interactable primary-btn md:!w-1/2" type="submit" :disabled="loading">
                         <Icon :name="loading ? 'eos-icons:loading' : 'fa6-solid:envelope'" size="1.25rem"/>
                         <span v-if="!loading">Send request</span>
                     </button>
