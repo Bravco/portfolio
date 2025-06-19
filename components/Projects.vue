@@ -8,14 +8,12 @@
                     :key="index" 
                     :to="project.url"
                     target="_blank"
-                    class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[0.95] transition-transform"
+                    class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[0.95] transition-transform rounded bg-cover bg-right"
+                    :style="{
+                        backgroundImage: `url(${project.bgUrl})`,
+                        backgroundColor: project.bgColor
+                    }"
                 >
-                    <NuxtImg
-                        class="w-full h-full absolute inset-0 object-cover object-right rounded -z-1"
-                        :style="{ 'background-color': project.bgColor }"
-                        :src="project.bgUrl"    
-                        :alt="`${project.title} background`"
-                    />
                     <NuxtImg class="min-h-6" :src="project.logoUrl" :alt="`${project.title} logo`"/>
                 </NuxtLink>
             </div>

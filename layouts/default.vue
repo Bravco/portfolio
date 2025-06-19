@@ -5,17 +5,17 @@
                 <h1 class="text-2xl font-medium">Andrej Hamráček</h1>
                 <ul class="flex items-center gap-8">
                     <li>
-                        <NuxtLink class="icon-btn" to="mailto:a.hamracek@gmail.com">
+                        <NuxtLink class="icon-btn" to="mailto:a.hamracek@gmail.com" aria-label="Email">
                             <Icon name="fa6-solid:envelope" size="1.25rem"/>
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink class="icon-btn" to="tel:+421949725726">
+                        <NuxtLink class="icon-btn" to="tel:+421949725726" aria-label="Phone Number">
                             <Icon name="fa6-solid:phone" size="1.25rem"/>
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink class="icon-btn" to="https://github.com/Bravco" target="_blank">
+                        <NuxtLink class="icon-btn" to="https://github.com/Bravco" target="_blank" aria-label="GitHub">
                             <Icon name="fa6-brands:github" size="1.25rem"/>
                         </NuxtLink>
                     </li>
