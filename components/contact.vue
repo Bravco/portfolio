@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section id="contact" class="flex flex-col gap-8">
+        <section v-gsap.entrance.slide-bottom id="contact" class="flex flex-col gap-8">
             <h2>Get website</h2>
             <form @submit.prevent="submit" class="md:grid grid-cols-2 flex flex-col gap-4 place-items-center">
                 <div class="inputfield">
