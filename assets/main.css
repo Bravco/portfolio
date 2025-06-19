@@ -109,18 +109,9 @@ textarea {
     color: var(--color-accent);
     border-color: var(--color-accent);
 }
-
-.icon-btn.light {
-    --_main-color: var(--color-background-primary);
-    --_accent-color: var(--color-text);
-}
-
 .icon-btn {
-    --_main-color: var(--color-text);
-    --_accent-color: var(--color-background-primary);
-
     position: relative;
-    color: var(--_main-color);
+    color: var(--color-text);
     transition: color 150ms;
 }
 
@@ -130,9 +121,9 @@ textarea {
     height: 2.5rem;
     position: absolute;
     inset: 0;
-    translate: -25% -33%;
+    translate: -25% -37.5%;
     border-radius: 50%;
-    background-color: var(--_main-color);
+    background-color: var(--color-text);
     z-index: -1;
     pointer-events: none;
     opacity: 0;
@@ -144,7 +135,7 @@ textarea {
 }
 
 .icon-btn:hover {
-    color: var(--_accent-color);
+    color: var(--color-background-primary);
 }
 
 .inputfield {
