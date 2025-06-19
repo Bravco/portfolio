@@ -161,7 +161,7 @@ textarea {
     transform: translateY(-50%);
     font-size: normal;
     pointer-events: none;
-    opacity: .75;
+    opacity: .5;
     transition-property: top, font-size, background-color, opacity;
     transition-duration: 300ms;
 }
