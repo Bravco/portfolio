@@ -67,6 +67,12 @@
         };
 
         const handleMouseMove = (e: MouseEvent) => {
+            if (trailer) {
+                if (!trailer.style.opacity) {
+                    trailer.style.opacity = "1";
+                }
+            }
+
             if (!e.target) return;
 
             const interactable = (e.target as HTMLElement).closest(".interactable");
