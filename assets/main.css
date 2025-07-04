@@ -81,7 +81,7 @@ textarea {
     resize: none;
 }
 
-.primary-btn, .outline-btn {
+.primary-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,6 +89,7 @@ textarea {
     text-transform: uppercase;
     font-weight: 500;
     border-radius: .25rem;
+    letter-spacing: 1px;
 }
 
 .primary-btn {
@@ -102,17 +103,6 @@ textarea {
     background-color: var(--color-accent);
 }
 
-.outline-btn {
-    padding: calc(.75rem - 2px) 2rem;
-    border: 2px solid var(--color-text);
-    transition-property: color, border-color;
-    transition-duration: 200ms;
-}
-
-.outline-btn:hover {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-}
 .icon-btn {
     position: relative;
     color: var(--color-text);

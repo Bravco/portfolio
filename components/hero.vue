@@ -9,7 +9,7 @@
                     <NuxtLink 
                         to="#contact" 
                         data-type="button"
-                        class="interactable cta-btn relative flex items-center justify-center gap-2 text-[var(--color-background-primary)] uppercase font-medium"
+                        class="interactable cta-btn relative flex items-center justify-center gap-2 text-[var(--color-background-primary)] uppercase font-medium tracking-[1px]"
                     >
                         Get website
                         <Icon name="fa6-solid:arrow-turn-down"/>
