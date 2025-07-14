@@ -1,9 +1,9 @@
 <template>
     <div>
         <header v-gsap.entrance.slide-top class="max-w-[var(--max-width)] mx-auto px-8 pt-8 mb-32">
-            <nav class="flex flex-wrap items-center justify-between">
+            <nav class="flex flex-wrap items-end justify-between gap-2">
                 <h1 class="text-2xl font-medium">Andrej Hamráček</h1>
-                <ul class="flex items-center gap-8">
+                <ul class="flex flex-wrap items-center gap-8">
                     <li>
                         <NuxtLink data-type="link" class="interactable icon-btn" to="mailto:a.hamracek@gmail.com" aria-label="Email">
                             <Icon name="fa6-solid:envelope" size="1.25rem"/>
