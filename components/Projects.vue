@@ -9,10 +9,11 @@
                     :to="project.url"
                     target="_blank"
                     data-type="project"
-                    class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[1.05] transition-transform rounded bg-cover bg-right"
+                    class="interactable relative h-96 aspect-[2/3] p-4 hover:scale-[1.05] transition-transform rounded bg-cover"
+                    :class="[ project.bgPosition ?? 'bg-center' ]"
                     :style="{
                         backgroundImage: `url(${project.bgUrl})`,
-                        backgroundColor: project.bgColor
+                        backgroundColor: project.bgColor ?? 'transparent'
                     }"
                 >
                     <NuxtImg class="min-h-6 max-h-12" :src="project.logoUrl" :alt="`${project.title} logo`"/>
@@ -27,46 +28,58 @@
 
     const projects = [
         {
+            title: "efestudio",
+            url: "https://efestudio.sk",
+            logoUrl: "/images/projects/efestudio-logo.svg",
+            bgUrl: "/images/projects/efestudio-background.webp"
+        },
+        {
             title: "Brikety Spiš",
             url: "https://briketyspis.sk",
             logoUrl: "/images/projects/briketyspis-logo.webp",
             bgUrl: "/images/projects/briketyspis-background.webp",
-            bgColor: "#ffead1"
+            bgColor: "#ffead1",
+            bgPosition: "bg-right"
         },
         {
             title: "Fyzioterapia a masáže",
             url: "https://fyzioterapiaamasaze.sk",
             logoUrl: "/images/projects/fyzioterapia-a-masaze-logo.webp",
             bgUrl: "/images/projects/fyzioterapia-a-masaze-background.webp",
-            bgColor: "#f3efec"
+            bgColor: "#f3efec",
+            bgPosition: "bg-right"
         },
         {
             title: "Najlacnejšia Autopožičovňa",
             url: "https://najlacnejsiaautopozicovna.sk",
             logoUrl: "/images/projects/najlacnejsia-autopozicovna-logo.webp",
             bgUrl: "/images/projects/najlacnejsia-autopozicovna-background.webp",
-            bgColor: "#ECF1F9"
+            bgColor: "#ECF1F9",
+            bgPosition: "bg-right"
         },
         {
             title: "Metagem",
             url: "https://metagem.pro",
             logoUrl: "/images/projects/metagem-logo.webp",
             bgUrl: "/images/projects/metagem-background.webp",
-            bgColor: "#ebf1fa"
+            bgColor: "#ebf1fa",
+            bgPosition: "bg-right"
         },
         {
             title: "BadBoys",
             url: "https://badboys.netlify.app",
             logoUrl: "/images/projects/badboys-logo.webp",
             bgUrl: "/images/projects/badboys-background.webp",
-            bgColor: "#242424"
+            bgColor: "#242424",
+            bgPosition: "bg-right"
         },
         {
             title: "Cowlendar",
             url: "https://bravco.github.io/cowlendar/",
             logoUrl: "/images/projects/cowlendar-logo.webp",
             bgUrl: "/images/projects/cowlendar-background.webp",
-            bgColor: "#EDEFFF"
+            bgColor: "#EDEFFF",
+            bgPosition: "bg-right"
         }
     ];
 
