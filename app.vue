@@ -18,9 +18,9 @@
 
     const gsap = useGSAP();
 
-    const trailerIconName: string = ref<string>("");
+    const trailerIconName = ref<string>("");
 
-    const getTrailerIconName = (type: string | null) => {
+    const getTrailerIconName = (type: string | null | undefined) => {
         switch (type) {
             case "link":
             case "button":
@@ -60,7 +60,9 @@
                 requestAnimationFrame(() => {
                     trailer.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? '2' : '1'})`;
                     trailer.style.backgroundColor = interacting ? "rgba(255,255,255,0.5)" : "var(--color-text)";
-                    trailerIcon.style.opacity = interacting ? "1": "0";
+                    
+                    if (trailerIcon) trailerIcon.style.opacity = interacting ? "1": "0";
+
                     isAnimating = false;
                 });
             }
@@ -75,11 +77,11 @@
 
             if (!e.target) return;
 
-            const interactable = (e.target as HTMLElement).closest(".interactable");
+            const interactable: Element | null = (e.target as HTMLElement).closest(".interactable");
             const interacting: boolean = interactable !== null;
 
             animateTrailer(e, interacting);
-            trailerIconName.value = interacting ? getTrailerIconName(interactable.dataset.type) : "";
+            trailerIconName.value = interacting ? getTrailerIconName((interactable as HTMLElement)!.dataset.type) : "";
         };
 
         const handleMouseEnter = () => {
