@@ -5,6 +5,7 @@
             <Hero/>
             <Projects/>
             <Contact/>
+            <Process/>
         </NuxtLayout>
         <div id="trailer" class="fixed inset-0 z-10000 w-4 h-4 backdrop-blur-xs grid place-items-center rounded-full pointer-events-none opacity-0 transition-all duration-150 ease-out">
             <Icon data-type="link" id="trailer-icon" class="opacity transition-opacity" :name="trailerIconName" size="0.5em" style="color: var(--color-primary);"/>
