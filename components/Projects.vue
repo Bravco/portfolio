@@ -46,8 +46,7 @@
             url: "https://fyzioterapiaamasaze.sk",
             logoUrl: "/images/projects/fyzioterapia-a-masaze-logo.webp",
             bgUrl: "/images/projects/fyzioterapia-a-masaze-background.webp",
-            bgColor: "#f3efec",
-            bgPosition: "bg-right"
+            bgColor: "#f3efec"
         },
         {
             title: "Najlacnejšia Autopožičovňa",
