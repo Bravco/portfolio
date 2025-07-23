@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section v-gsap.entrance.slide-bottom>
+        <section>
             <div class="flex sm:flex-row flex-col gap-4">
                 <div class="text-center relative w-full">
                     <div class="relative flex justify-center">

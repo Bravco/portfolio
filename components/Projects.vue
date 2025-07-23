@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section v-gsap.entrance.slide-bottom id="projects" class="flex flex-col gap-8">
+        <section id="projects" class="flex flex-col gap-8">
             <h2>Featured Projects</h2>
             <div id="draggable" class="flex gap-8">
                 <NuxtLink 

@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/icon", "@nuxtjs/tailwindcss", "v-gsap-nuxt", "@nuxtjs/robots"],
+  modules: ["@nuxt/image", "@nuxt/icon", "@nuxtjs/tailwindcss", "@nuxtjs/robots", "lenis/nuxt"],
   css: [ "@/assets/main.css" ],
   runtimeConfig: {
     public: {

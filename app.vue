@@ -1,6 +1,7 @@
 <template>
     <div>
         <NuxtRouteAnnouncer/>
+        <VueLenis root/>
         <NuxtLayout>
             <Hero/>
             <Projects/>
@@ -14,10 +15,10 @@
 </template>
 
 <script setup lang="ts">
+    import { gsap } from "gsap";
     import Draggable from "gsap/Draggable";
     import InertiaPlugin from "gsap/InertiaPlugin";
-
-    const gsap = useGSAP();
+    import { VueLenis } from "lenis/vue";
 
     const trailerIconName = ref<string>("");
 

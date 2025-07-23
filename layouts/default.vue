@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header v-gsap.entrance.slide-top class="max-w-[var(--max-width)] mx-auto px-8 pt-8 mb-32">
+        <header class="max-w-[var(--max-width)] mx-auto px-8 pt-8 mb-32">
             <nav class="flex flex-wrap items-end justify-between gap-2">
                 <h1 class="text-2xl font-medium">Andrej Hamráček</h1>
                 <ul class="flex flex-wrap items-center gap-8">
@@ -28,11 +28,11 @@
         <footer class="relative mt-32 px-8 pb-8 pt-32">
             <NuxtImg class="w-full h-full absolute inset-0 object-cover object-bottom rotate-180 -z-10" src="/images/wave.svg" alt="wave"/>
             <div class="max-w-[var(--max-width)] mx-auto flex flex-wrap items-start justify-between gap-8">
-                <div v-gsap.entrance.slide-left class="flex flex-col items-start gap-2">
+                <div class="flex flex-col items-start gap-2">
                     <h1 class="text-2xl font-medium">Andrej Hamráček</h1>
                     <p class="text-xs">&copy; {{ (new Date()).getFullYear() }} Andrej Hamráček | All Rights Reserved.</p>
                 </div>
-                <div v-gsap.entrance.slide-right class="flex flex-wrap gap-8 text-sm">
+                <div class="flex flex-wrap gap-8 text-sm">
                     <ul class="flex flex-col items-start gap-2">
                         <li>
                             <h2 class="!text-[var(--color-text)]">Contact</h2>

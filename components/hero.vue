@@ -3,7 +3,7 @@
         <section id="hero">
             <NuxtImg class="w-full h-1/2 absolute inset-0 object-cover object-bottom -z-10" src="/images/wave.svg" alt="wave"/>
             <div class="hero flex md:flex-row flex-col gap-16 items-start justify-between">
-                <div v-gsap.entrance.slide-left class="relative flex flex-col items-start gap-8">
+                <div class="relative flex flex-col items-start gap-8">
                     <NuxtImg class="h-20 absolute -top-24 left-40" src="/images/arrow.svg" alt="arrow"/>
                     <p class="about-paragraph md:w-2/3">I am a creative <span class="text-[var(--color-primary)] font-medium">web developer</span> who turns ideas into visually captivating and functional websites.</p>
                     <NuxtLink 
@@ -15,7 +15,7 @@
                         <Icon name="fa6-solid:arrow-turn-down"/>
                     </NuxtLink>
                 </div>
-                <div v-gsap.entrance.slide-right class="relative sm:mb-8 sm:mr-8">
+                <div class="relative sm:mb-8 sm:mr-8">
                     <Particles class="sm:inline hidden"/>
                     <NuxtImg class="w-full sm:absolute sm:inset-0 sm:top-8 sm:left-8" src="/images/hero.webp" alt="hero"/>
                 </div>
