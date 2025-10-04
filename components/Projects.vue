@@ -34,6 +34,13 @@
             bgUrl: "/images/projects/efestudio-background.webp"
         },
         {
+            title: "Zemiaky Spiš",
+            url: "https://zemiakyspis.sk",
+            logoUrl: "/images/projects/zemiakyspis-logo.webp",
+            bgUrl: "/images/projects/zemiakyspis-background.webp",
+            bgColor: "#1c1917"
+        },
+        {
             title: "Brikety Spiš",
             url: "https://briketyspis.sk",
             logoUrl: "/images/projects/briketyspis-logo.webp",
