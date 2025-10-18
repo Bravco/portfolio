@@ -5,7 +5,7 @@
                 <h1 class="text-2xl font-medium">Andrej Hamráček</h1>
                 <ul class="flex flex-wrap items-center gap-8">
                     <li>
-                        <NuxtLink data-type="link" class="interactable icon-btn" to="mailto:a.hamracek@gmail.com" aria-label="Email">
+                        <NuxtLink data-type="link" class="interactable icon-btn" to="mailto:andrej@hamracek.dev" aria-label="Email">
                             <Icon name="fa6-solid:envelope" size="1.25rem"/>
                         </NuxtLink>
                     </li>
@@ -38,7 +38,7 @@
                             <h2 class="!text-[var(--color-text)]">Contact</h2>
                         </li>
                         <li>
-                            <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="mailto:a.hamracek@gmail.com">a.hamracek@gmail.com</NuxtLink>
+                            <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="mailto:andrej@hamracek.dev">andrej@hamracek.dev</NuxtLink>
                         </li>
                         <li>
                             <NuxtLink data-type="link" class="interactable hover:text-[var(--color-primary)] transition-colors" to="tel:+421949725726">+421 949 725 726</NuxtLink>
