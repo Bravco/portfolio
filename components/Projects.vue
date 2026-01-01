@@ -28,6 +28,12 @@
 
     const projects = [
         {
+            title: "PercentBet",
+            url: "https://percentbet.com",
+            logoUrl: "/images/projects/percentbet-logo.webp",
+            bgUrl: "/images/projects/percentbet-background.webp"
+        },
+        {
             title: "efestudio",
             url: "https://efestudio.sk",
             logoUrl: "/images/projects/efestudio-logo.svg",
